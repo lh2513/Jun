@@ -21,7 +21,7 @@ import com.github.catvod.crawler.SpiderDebug;
 
 public class Xinsj extends Spider {
 
-    private static final String siteUrl = "https://www.6080dy3.com";
+    private static final String siteUrl = "https://www.6080yy3.com";
 
     public void init(Context context) {
         super.init(context);
