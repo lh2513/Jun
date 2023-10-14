@@ -18,6 +18,8 @@ public class Proxy extends Spider {
                 return new Object[]{200, "text/plain; charset=utf-8", new ByteArrayInputStream("ok".getBytes("UTF-8"))};
             case "ali":
                 return Ali.proxy(params);
+            case "webdav":
+                return WebDAV.vod(params);
             default:
                 return null;
         }
