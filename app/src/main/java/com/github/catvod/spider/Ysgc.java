@@ -30,8 +30,8 @@ import java.util.regex.Pattern;
  */
 public class Ysgc extends Spider {
 
-    private static final String siteUrl = "https://www.ik4.cc";
-    private static final String siteHost = "www.ik4.cc";
+    private static final String siteUrl = "https://www.ysgc.fun";
+    private static final String siteHost = "www.ysgc.fun";
 
     protected JSONObject playerConfig = new JSONObject();
 
