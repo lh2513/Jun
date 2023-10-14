@@ -29,8 +29,8 @@ import java.util.regex.Pattern;
 import okhttp3.Headers;
 
 public class Cokemv extends Spider {
-    private static final String siteUrl = "https://cokemv.me";
-    private static final String siteHost = "cokemv.me";
+    private static final String siteUrl = "https://cokeby.com";
+    private static final String siteHost = "cokeby.com";
 
     /**
      * 播放源配置
@@ -379,7 +379,7 @@ public class Cokemv extends Spider {
             //定义播放用的headers
             JSONObject headers = new JSONObject();
             //headers.put("Host", " cokemv.co");
-            headers.put("origin", " https://cokemv.me");
+            headers.put("origin", " https://cokeby.com");
             headers.put("User-Agent", " Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36");
             headers.put("Accept", " */*");
             headers.put("Accept-Language", " zh-CN,zh;q=0.9,en-US;q=0.3,en;q=0.7");
@@ -429,7 +429,7 @@ public class Cokemv extends Spider {
     @Override
     public String searchContent(String key, boolean quick) {
         try {
-            String url = "https://www.sogou.com/web?query=site%3Acokemv.me%2Fvoddetail+" + URLEncoder.encode(key);
+            String url = "https://www.sogou.com/web?query=site%3Acokeby.com%2Fvoddetail+" + URLEncoder.encode(key);
             Document docs = Jsoup.parse(OkHttpUtil.string(url, sHeaders()));
             JSONObject result = new JSONObject();
             JSONArray videos = new JSONArray();
