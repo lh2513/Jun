@@ -402,7 +402,7 @@ public class Ddys extends Spider {
                     String adksrc0 = src.getString("src0");
                     String adksrc2 = src.getString("src2");
                     String vodName = src.getString("caption");
-                    String playURL = "https://w.ddys.pro" + adksrc0 +"?ddrkey=" + adksrc2;
+                    String playURL = "https://v.ddys.pro" + adksrc0 +"?ddrkey=" + adksrc2;
                     String zm = "https://ddys.pro/subddr/" + src.getString("subsrc");
                     String pzm = playURL + "|" + zm;
                     vodItemsos.add(vodName + "$" + pzm);
@@ -431,7 +431,7 @@ public class Ddys extends Spider {
                             JSONObject src = Track.getJSONObject(k);
                             String adk = src.getString("src1");
                             String vodName = src.getString("caption");
-                            String playURL = "https://ddys.pro/getvddr2/video?id=" + adk +"&dim=1080P+&type=mix";
+                            String playURL = "https://ddys.pro/getvddr3/video?id=" + adk +"&dim=1080P+&type=mix";
                             String zm = "https://ddys.pro/subddr/" + src.getString("subsrc");
                             String pzm = playURL + "|" + zm;
                             vodItems2.add(vodName + "$" + pzm);
@@ -441,7 +441,7 @@ public class Ddys extends Spider {
                             String adksrc0 = src.getString("src0");
                             String adksrc2 = src.getString("src2");
                             String vodName = src.getString("caption");
-                            String playURL = "https://w.ddys.pro" + adksrc0 +"?ddrkey=" + adksrc2;
+                            String playURL = "https://v.ddys.pro" + adksrc0 +"?ddrkey=" + adksrc2;
                             String zm = "https://ddys.pro/subddr/" + src.getString("subsrc");
                             String pzm = playURL + "|" + zm;
                             vodItems2os.add(vodName + "$" + pzm);
