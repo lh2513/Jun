@@ -402,7 +402,7 @@ public class Ddys extends Spider {
                     String adksrc0 = src.getString("src0");
                     String adksrc2 = src.getString("src2");
                     String vodName = src.getString("caption");
-                    String playURL = "https://v.ddys.pro" + adksrc0 +"" + adksrc2;
+                    String playURL = "https://v.ddys.pro" + adksrc0 +"?ddrkey=";
                     String zm = "https://ddys.pro/subddr/" + src.getString("subsrc");
                     String pzm = playURL + "|" + zm;
                     vodItemsos.add(vodName + "$" + pzm);
@@ -441,7 +441,7 @@ public class Ddys extends Spider {
                             String adksrc0 = src.getString("src0");
                             String adksrc2 = src.getString("src2");
                             String vodName = src.getString("caption");
-                            String playURL = "https://v.ddys.pro" + adksrc0 +"" + adksrc2;
+                            String playURL = "https://v.ddys.pro" + adksrc0 +"?ddrkey=";
                             String zm = "https://ddys.pro/subddr/" + src.getString("subsrc");
                             String pzm = playURL + "|" + zm;
                             vodItems2os.add(vodName + "$" + pzm);
