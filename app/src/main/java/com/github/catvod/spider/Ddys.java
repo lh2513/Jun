@@ -7,8 +7,8 @@ import com.github.catvod.crawler.SpiderDebug;
 import com.github.catvod.utils.AES;
 import com.github.catvod.utils.CBC;
 import com.github.catvod.utils.gZip;
-import com.github.catvod.net.OKCallBack;
-import com.github.catvod.net.OkHttpUtil;
+import com.github.catvod.utils.okhttp.OKCallBack;
+import com.github.catvod.utils.okhttp.OkHttpUtil;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
