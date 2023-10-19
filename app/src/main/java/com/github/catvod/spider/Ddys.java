@@ -7,8 +7,8 @@ import com.github.catvod.crawler.SpiderDebug;
 import com.github.catvod.utils.AES;
 import com.github.catvod.utils.CBC;
 import com.github.catvod.utils.gZip;
-import com.github.catvod.utils.okhttp.OKCallBack;
-import com.github.catvod.utils.okhttp.OkHttpUtil;
+import com.github.catvod.net.OKCallBack;
+import com.github.catvod.net.OkHttpUtil;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -48,14 +48,14 @@ import okhttp3.ResponseBody;
 
 public class Ddys extends Spider {
 
-    private static final String siteUrl = "https://ddys.tv";
-    private static final String siteHost = "ddys.tv";
+    private static final String siteUrl = "https://ddys.pro";
+    private static final String siteHost = "ddys.pro";
     private String cookie="";
 
     protected JSONObject filterConfig;
 
     protected Pattern regexCategory = Pattern.compile("/category/(\\S+)/");
-    protected Pattern regexVid = Pattern.compile("https://ddys.tv/(\\S+)/");
+    protected Pattern regexVid = Pattern.compile("https://ddys.pro/(\\S+)/");
 
     protected Pattern regexPage = Pattern.compile("\\S+/page/(\\S+)\\S+");
     protected Pattern m = Pattern.compile("\\S+(http\\S+g)");
@@ -73,7 +73,7 @@ public class Ddys extends Spider {
     protected HashMap<String, String> getHeaders(String url) {
         HashMap<String, String> headers = new HashMap<>();
         headers.put("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.62 Safari/537.36");
-        headers.put("Referer", "https://ddys.tv/");
+        headers.put("Referer", "https://ddys.pro/");
         if(cookie.length()>0 && !url.contains(("google"))){
             headers.put("Cookie", cookie);
         }
@@ -83,7 +83,7 @@ public class Ddys extends Spider {
     protected static HashMap<String, String> Headers() {
         HashMap<String, String> headers = new HashMap<>();
         headers.put("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36");
-        headers.put("Referer", "https://ddys.tv/");
+        headers.put("Referer", "https://ddys.pro/");
         return headers;
     }
 
@@ -392,8 +392,8 @@ public class Ddys extends Spider {
                     JSONObject src = Track.getJSONObject(k);
                     String adk = src.getString("src1");
                     String vodName = src.getString("caption");
-                    String playURL = "https://ddys.tv/getvddr/video?id=" + adk +"&dim=1080P+&type=mix";
-                    String zm = "https://ddys.tv/subddr/" + src.getString("subsrc");
+                    String playURL = "https://ddys.pro/getvddr/video?id=" + adk +"&dim=1080P+&type=mix";
+                    String zm = "https://ddys.pro/subddr/" + src.getString("subsrc");
                     String pzm = playURL + "|" + zm;
                     vodItems.add(vodName + "$" + pzm);
                 }
@@ -402,8 +402,8 @@ public class Ddys extends Spider {
                     String adksrc0 = src.getString("src0");
                     String adksrc2 = src.getString("src2");
                     String vodName = src.getString("caption");
-                    String playURL = "https://w.ddys.tv" + adksrc0 +"?ddrkey=" + adksrc2;
-                    String zm = "https://ddys.tv/subddr/" + src.getString("subsrc");
+                    String playURL = "https://w.ddys.pro" + adksrc0 +"?ddrkey=" + adksrc2;
+                    String zm = "https://ddys.pro/subddr/" + src.getString("subsrc");
                     String pzm = playURL + "|" + zm;
                     vodItemsos.add(vodName + "$" + pzm);
                 }
@@ -431,8 +431,8 @@ public class Ddys extends Spider {
                             JSONObject src = Track.getJSONObject(k);
                             String adk = src.getString("src1");
                             String vodName = src.getString("caption");
-                            String playURL = "https://ddys.tv/getvddr/video?id=" + adk +"&dim=1080P+&type=mix";
-                            String zm = "https://ddys.tv/subddr/" + src.getString("subsrc");
+                            String playURL = "https://ddys.pro/getvddr/video?id=" + adk +"&dim=1080P+&type=mix";
+                            String zm = "https://ddys.pro/subddr/" + src.getString("subsrc");
                             String pzm = playURL + "|" + zm;
                             vodItems2.add(vodName + "$" + pzm);
                         }
@@ -441,8 +441,8 @@ public class Ddys extends Spider {
                             String adksrc0 = src.getString("src0");
                             String adksrc2 = src.getString("src2");
                             String vodName = src.getString("caption");
-                            String playURL = "https://w.ddys.tv" + adksrc0 +"?ddrkey=" + adksrc2;
-                            String zm = "https://ddys.tv/subddr/" + src.getString("subsrc");
+                            String playURL = "https://w.ddys.pro" + adksrc0 +"?ddrkey=" + adksrc2;
+                            String zm = "https://ddys.pro/subddr/" + src.getString("subsrc");
                             String pzm = playURL + "|" + zm;
                             vodItems2os.add(vodName + "$" + pzm);
                         }
@@ -556,7 +556,7 @@ public class Ddys extends Spider {
             result.put("header", "");
             //    if (!TextUtils.isEmpty(str4)) {
             result.put("subf", "/vtt/utf-8");
-            result.put("subt", Proxy.localProxyUrl() + "?do=ddys&url=" + URLEncoder.encode(ZiMu));
+            result.put("subt", Proxy.getUrl() + "?do=ddys&url=" + URLEncoder.encode(ZiMu));
             //       result.put("subt", ZiMu);
             //    }
             return result.toString();
@@ -570,7 +570,7 @@ public class Ddys extends Spider {
     @Override
     public String searchContent(String key, boolean quick) {
         try {
-            String url = "https://www.google.com/search?q=site%3Addys.tv+" + URLEncoder.encode(key);
+            String url = "https://www.google.com/search?q=site%3Addys.pro+" + URLEncoder.encode(key);
             Document doc = Jsoup.parse(OkHttpUtil.string(url, getHeaders(url)));
             JSONObject result = new JSONObject();
             JSONArray videos = new JSONArray();
