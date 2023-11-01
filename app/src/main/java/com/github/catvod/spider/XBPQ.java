@@ -745,7 +745,8 @@ public class XBPQ extends Spider {
 
     private String fixCover(String str, String str2) {
         try {
-            return "proxy:        } catch (Exception e) {
+            return "proxy:proxy://do=xbpq&site=" + str2 + "&pic=" + str;
+        } catch (Exception e) {
             if (this.f68l) {
                 Init.show(this.f53F + "调试->fixCover出错：" + e.toString());
             }
@@ -757,19 +758,6 @@ public class XBPQ extends Spider {
         }
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     private org.json.JSONArray m1562g(java.lang.String r18, java.lang.String r19, java.lang.String r20, java.lang.String r21, java.lang.String r22) {
         
         throw new UnsupportedOperationException("Method not decompiled: com.github.catvod.spider.XBPQ.m1562g(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String):org.json.JSONArray");
