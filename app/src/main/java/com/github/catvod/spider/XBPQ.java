@@ -4369,7 +4369,7 @@ public class XBPQ extends Spider {
                             }
                             int i8 = 5;
                             int i9 = i;
-                            r4 = {str7, "二次", "三次", "四次", "五次"};
+                            str4 = {str7, "二次", "三次", "四次", "五次"};
                             if (B4.length() <= 0) {
                                 i8 = B3.length() > 0 ? 4 : B2.length() > 0 ? 3 : B.length() > 0 ? 2 : D.length() > 0 ? 1 : i9;
                             }
