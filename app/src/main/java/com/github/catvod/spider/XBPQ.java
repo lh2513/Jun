@@ -172,9 +172,6 @@ public class XBPQ extends Spider {
         return m1598C(str, "");
     }
 
-    
-    
-    
     private java.lang.String m1598C(java.lang.String r10, java.lang.String r11) {
         
         throw new UnsupportedOperationException("Method not decompiled: com.github.catvod.spider.XBPQ.m1598C(java.lang.String, java.lang.String):java.lang.String");
@@ -208,10 +205,10 @@ public class XBPQ extends Spider {
     
     private String m1590K(String str) {
         Charset charset;
-        if (str.indexOf("Ê±¼ä´Á") >= 0) {
+        if (str.indexOf("æ—¶é—´æˆ³") >= 0) {
             StringBuilder m817b = C0374d.m817b("");
             m817b.append(new Date().getTime());
-            str = str.replace("Ê±¼ä´Á", m817b.toString());
+            str = str.replace("æ—¶é—´æˆ³", m817b.toString());
         }
         if (str.indexOf(":9978/") > 0 && !"9978".equals(this.f56I)) {
             str = str.replace("9978", this.f56I);
@@ -248,7 +245,7 @@ public class XBPQ extends Spider {
         if (str.length() < 1) {
             return str;
         }
-        String replaceAll = str.replaceAll("\\&#?[a-zA-Z0-9]{1,10};", "").replaceAll("<[^>]*>", "/").replaceAll("[><]", "").replaceAll(" ", "¿Õ¿Õ¿Õ").replaceAll("\\s+", "").replaceAll("¿Õ¿Õ¿Õ", " ").replaceAll("/+", "/");
+        String replaceAll = str.replaceAll("\\&#?[a-zA-Z0-9]{1,10};", "").replaceAll("<[^>]*>", "/").replaceAll("[><]", "").replaceAll(" ", "ç©ºç©ºç©º").replaceAll("\\s+", "").replaceAll("ç©ºç©ºç©º", " ").replaceAll("/+", "/");
         while (replaceAll.startsWith("/")) {
             replaceAll = replaceAll.substring(1, replaceAll.length());
         }
@@ -258,13 +255,6 @@ public class XBPQ extends Spider {
         return replaceAll;
     }
 
-    
-    
-    
-    
-    
-    
-    
     private void m1588M() {
         
         throw new UnsupportedOperationException("Method not decompiled: com.github.catvod.spider.XBPQ.m1588M():void");
@@ -272,7 +262,7 @@ public class XBPQ extends Spider {
 
     
     private String m1587N(String str) {
-        return str.indexOf("×ªÒå¾®ºÅ") >= 0 ? str.replace("×ªÒå¾®ºÅ", "#") : str;
+        return str.indexOf("è½¬ä¹‰äº•å·") >= 0 ? str.replace("è½¬ä¹‰äº•å·", "#") : str;
     }
 
     
@@ -280,16 +270,16 @@ public class XBPQ extends Spider {
         try {
             SpiderApi spiderApi = this.f55H;
             if (spiderApi != null) {
-                spiderApi.log("ÇëÇóÌø×ª²¥·ÅÁ´½ÓÔ´Âë£¬webUrl--> " + str);
+                spiderApi.log("è¯·æ±‚è·³è½¬æ’­æ”¾é“¾æ¥æºç ï¼ŒwebUrl--> " + str);
             }
             String m1558j = m1558j(str);
             SpiderApi spiderApi2 = this.f55H;
             if (spiderApi2 != null) {
                 if (m1558j == null) {
-                    spiderApi2.log("Î´»ñÈ¡µ½Ìø×ªÔ´Âë");
+                    spiderApi2.log("æœªè·å–åˆ°è·³è½¬æºç ");
                     m1558j = "";
                 } else {
-                    spiderApi2.log(this.f68l ? "»ñÈ¡µ½Ìø×ªÔ´Âë--> " + m1558j : "»ñÈ¡µ½Ìø×ªÔ´Âë--> " + m1558j.split("<meta http")[0].split(",\\{")[0] + "......");
+                    spiderApi2.log(this.f68l ? "è·å–åˆ°è·³è½¬æºç --> " + m1558j : "è·å–åˆ°è·³è½¬æºç --> " + m1558j.split("<meta http")[0].split(",\\{")[0] + "......");
                 }
             }
             if (str2.length() <= 0) {
@@ -316,11 +306,11 @@ public class XBPQ extends Spider {
                                 }
                             } catch (Exception e) {
                                 if (this.f68l) {
-                                    Init.show(this.f53F + "µ÷ÊÔ->Ìø×ªUrl½âÂë³ö´í£º" + e.toString());
+                                    Init.show(this.f53F + "è°ƒè¯•->è·³è½¬Urlè§£ç å‡ºé”™ï¼š" + e.toString());
                                 }
                                 SpiderApi spiderApi3 = this.f55H;
                                 if (spiderApi3 != null) {
-                                    spiderApi3.log("Ìø×ªUrl½âÂë´íÎó£¡-->" + e.toString());
+                                    spiderApi3.log("è·³è½¬Urlè§£ç é”™è¯¯ï¼-->" + e.toString());
                                 }
                             }
                             if (trim.length() > 10) {
@@ -334,11 +324,11 @@ public class XBPQ extends Spider {
             return str;
         } catch (Exception e2) {
             if (this.f68l) {
-                Init.show(this.f53F + "µ÷ÊÔ->jumpCut³ö´í£º" + e2.toString());
+                Init.show(this.f53F + "è°ƒè¯•->jumpCutå‡ºé”™ï¼š" + e2.toString());
             }
             SpiderApi spiderApi4 = this.f55H;
             if (spiderApi4 != null) {
-                C0595b.m368a(e2, C0374d.m817b("jumpCut()´íÎó£¡-->"), spiderApi4);
+                C0595b.m368a(e2, C0374d.m817b("jumpCut()é”™è¯¯ï¼-->"), spiderApi4);
             }
             return str;
         }
@@ -356,10 +346,10 @@ public class XBPQ extends Spider {
 
     
     private String m1584Q(String str) {
-        if (str.indexOf("×ªÒå×óÀ¨ºÅ") >= 0) {
-            str = str.replace("×ªÒå×óÀ¨ºÅ", "[");
+        if (str.indexOf("è½¬ä¹‰å·¦æ‹¬å·") >= 0) {
+            str = str.replace("è½¬ä¹‰å·¦æ‹¬å·", "[");
         }
-        return str.indexOf("×ªÒåÓÒÀ¨ºÅ") >= 0 ? str.replace("×ªÒåÓÒÀ¨ºÅ", "]") : str;
+        return str.indexOf("è½¬ä¹‰å³æ‹¬å·") >= 0 ? str.replace("è½¬ä¹‰å³æ‹¬å·", "]") : str;
     }
 
     
@@ -422,7 +412,7 @@ public class XBPQ extends Spider {
         }
         SpiderApi spiderApi = this.f55H;
         if (spiderApi != null) {
-            StringBuilder m817b = C0374d.m817b("ÏìÓ¦--> ");
+            StringBuilder m817b = C0374d.m817b("å“åº”--> ");
             m817b.append(map.toString());
             spiderApi.log(m817b.toString());
         }
@@ -496,14 +486,14 @@ public class XBPQ extends Spider {
 
     
     private void m1577X(String str) {
-        if (m1599B("¼ò½é").length() > 0) {
-            C0340p.f654l = m1589L(m1576Y(str, m1599B("¼ò½é"), "").get(0));
+        if (m1599B("ç®€ä»‹").length() > 0) {
+            C0340p.f654l = m1589L(m1576Y(str, m1599B("ç®€ä»‹"), "").get(0));
         }
-        if (m1599B("µ¼Ñİ").length() > 0) {
-            C0340p.f655m = m1589L(m1576Y(str, m1599B("µ¼Ñİ"), "").get(0));
+        if (m1599B("å¯¼æ¼”").length() > 0) {
+            C0340p.f655m = m1589L(m1576Y(str, m1599B("å¯¼æ¼”"), "").get(0));
         }
-        if (m1597D("Ö÷Ñİ", "ÑİÔ±", "").length() > 0) {
-            C0340p.f656n = m1589L(m1576Y(str, m1597D("Ö÷Ñİ", "ÑİÔ±", ""), "").get(0));
+        if (m1597D("ä¸»æ¼”", "æ¼”å‘˜", "").length() > 0) {
+            C0340p.f656n = m1589L(m1576Y(str, m1597D("ä¸»æ¼”", "æ¼”å‘˜", ""), "").get(0));
         }
     }
 
@@ -532,15 +522,15 @@ public class XBPQ extends Spider {
         String m1559i;
         StringBuilder sb;
         try {
-            String replaceAll = str2.replaceAll(".*<ĞòºÅ>(.*)", "$1");
-            String replaceAll2 = str2.replaceAll("<ĞòºÅ>.*", "");
-            if (str.indexOf("Ìæ»»") >= 0) {
-                String replaceAll3 = str.replaceAll(".*\\[½ö?Ìæ»»[:£º](.*?)\\].*", "$1");
+            String replaceAll = str2.replaceAll(".*<åºå·>(.*)", "$1");
+            String replaceAll2 = str2.replaceAll("<åºå·>.*", "");
+            if (str.indexOf("æ›¿æ¢") >= 0) {
+                String replaceAll3 = str.replaceAll(".*\\[ä»…?æ›¿æ¢[:ï¼š](.*?)\\].*", "$1");
                 char c = 0;
                 if (replaceAll3.indexOf("##") >= 0) {
                     return m1576Y(replaceAll2, replaceAll3.replace("##", "&&"), "").get(0).trim();
                 }
-                String replace = m1584Q(replaceAll3).replace("<ĞòºÅ>", replaceAll);
+                String replace = m1584Q(replaceAll3).replace("<åºå·>", replaceAll);
                 if (!replace.isEmpty()) {
                     String[] split = replace.split("#");
                     int length = split.length;
@@ -556,7 +546,7 @@ public class XBPQ extends Spider {
                         }
                         String m1563f0 = m1563f0(str4);
                         if (str3.indexOf("*") >= 0 && m1563f0.length() > 0) {
-                            if (m1563f0.equals("¿Õ")) {
+                            if (m1563f0.equals("ç©º")) {
                                 m1563f0 = "";
                             }
                             if (str3.startsWith("*")) {
@@ -579,10 +569,10 @@ public class XBPQ extends Spider {
                             continue;
                             i++;
                             c = 0;
-                        } else if (str3.equals("¿Õ")) {
+                        } else if (str3.equals("ç©º")) {
                             return m1563f0;
                         } else {
-                            if (m1563f0.equals("¿Õ")) {
+                            if (m1563f0.equals("ç©º")) {
                                 m1563f0 = "";
                             }
                             m1559i = m1559i(m1565e0(str3));
@@ -596,11 +586,11 @@ public class XBPQ extends Spider {
             return replaceAll2;
         } catch (Exception e) {
             if (this.f68l) {
-                Init.show(this.f53F + "µ÷ÊÔ->Ìæ»»³ö´í£¬Çë¼ì²é£º" + str + "->" + e.toString());
+                Init.show(this.f53F + "è°ƒè¯•->æ›¿æ¢å‡ºé”™ï¼Œè¯·æ£€æŸ¥ï¼š" + str + "->" + e.toString());
             }
             SpiderApi spiderApi = this.f55H;
             if (spiderApi != null) {
-                C0595b.m368a(e, C0374d.m817b("Ìæ»»tH()´íÎó£¡-->"), spiderApi);
+                C0595b.m368a(e, C0374d.m817b("æ›¿æ¢tH()é”™è¯¯ï¼-->"), spiderApi);
             }
             return str2;
         }
@@ -634,7 +624,7 @@ public class XBPQ extends Spider {
                 jSONArray = m1544x.getJSONArray("list");
             }
             if (jSONArray.length() < 1 && this.f78v.length() < 1) {
-                if ("ËÑË÷".equals(this.f73q) && this.f74r.indexOf("k0") >= 0) {
+                if ("æœç´¢".equals(this.f73q) && this.f74r.indexOf("k0") >= 0) {
                     this.f74r = this.f74r.replace("k0", "");
                 }
                 if (this.f74r.indexOf("c") < 0) {
@@ -642,7 +632,7 @@ public class XBPQ extends Spider {
                 }
                 SpiderApi spiderApi = this.f55H;
                 if (spiderApi != null) {
-                    spiderApi.log("×Ô¶¯Ä£Ê½<li>Î´½ØÈ¡µ½Êı¾İ£¬³¢ÊÔÓÃ<a>ÔÙ½ØÈ¡Ò»´Î");
+                    spiderApi.log("è‡ªåŠ¨æ¨¡å¼<li>æœªæˆªå–åˆ°æ•°æ®ï¼Œå°è¯•ç”¨<a>å†æˆªå–ä¸€æ¬¡");
                 }
                 this.f78v = "<a&&</a>";
                 m1544x = m1544x(str, str2, z, hashMap);
@@ -653,20 +643,20 @@ public class XBPQ extends Spider {
             if (jSONArray.length() < 1 && "<a&&</a>".equals(this.f78v)) {
                 SpiderApi spiderApi2 = this.f55H;
                 if (spiderApi2 != null) {
-                    spiderApi2.log("×Ô¶¯Ä£Ê½<a>Î´½ØÈ¡µ½Êı¾İ£¬³¢ÊÔÓÃ<div>ÔÙ½ØÈ¡Ò»´Î");
+                    spiderApi2.log("è‡ªåŠ¨æ¨¡å¼<a>æœªæˆªå–åˆ°æ•°æ®ï¼Œå°è¯•ç”¨<div>å†æˆªå–ä¸€æ¬¡");
                 }
                 this.f78v = "<div&&</div>";
                 m1544x = m1544x(str, str2, z, hashMap);
-                if ("ËÑË÷".equals(this.f73q)) {
+                if ("æœç´¢".equals(this.f73q)) {
                     this.f78v = "";
                 }
             }
-            final String m1599B = m1599B("ä¯ÀÀÆ÷");
+            final String m1599B = m1599B("æµè§ˆå™¨");
             if ((m1599B.length() < 1 && this.f74r.indexOf("L") >= 0) || "1".equals(m1599B)) {
                 m1599B = this.f62f;
             }
             final String m1554n = m1554n(m1599B);
-            if (!"ËÑË÷".equals(this.f73q) && m1599B.startsWith("http") && !"0".equals(this.f82z)) {
+            if (!"æœç´¢".equals(this.f73q) && m1599B.startsWith("http") && !"0".equals(this.f82z)) {
                 try {
                     Init.run(new Runnable() {                         @Override                         public final void run() {
                             final XBPQ xbpq = XBPQ.this;
@@ -674,7 +664,7 @@ public class XBPQ extends Spider {
                             String str4 = m1554n;
                             String str5 = XBPQ.f46J;
                             xbpq.getClass();
-                            C0620k.m365A("ÄÚÖÃÍøÒ³ä¯ÀÀÆ÷", str3, str4, new InterfaceC0619j() {                                 @Override                                 public void vertifyCode(String str6) {
+                            C0620k.m365A("å†…ç½®ç½‘é¡µæµè§ˆå™¨", str3, str4, new InterfaceC0619j() {                                 @Override                                 public void vertifyCode(String str6) {
                                     if (str6.indexOf("$$$") > 1) {
                                         String[] split = str6.split("\\$\\$\\$");
                                         XBPQ.f46J = split[0].split("#")[0];
@@ -694,11 +684,11 @@ public class XBPQ extends Spider {
                     }
                 } catch (Exception e) {
                     if (this.f68l) {
-                        Init.show(this.f53F + "µ÷ÊÔ->ÄÚÖÃä¯ÀÀÆ÷ÔËĞĞ³ö´í£º" + e.toString());
+                        Init.show(this.f53F + "è°ƒè¯•->å†…ç½®æµè§ˆå™¨è¿è¡Œå‡ºé”™ï¼š" + e.toString());
                     }
                     SpiderApi spiderApi3 = this.f55H;
                     if (spiderApi3 != null) {
-                        spiderApi3.log("ÄÚÖÃä¯ÀÀÆ÷ÔËĞĞ()´íÎó£¡-->" + e.toString());
+                        spiderApi3.log("å†…ç½®æµè§ˆå™¨è¿è¡Œ()é”™è¯¯ï¼-->" + e.toString());
                     }
                 }
             }
@@ -706,11 +696,11 @@ public class XBPQ extends Spider {
             return m1544x;
         } catch (JSONException e2) {
             if (this.f68l) {
-                Init.show(this.f53F + "µ÷ÊÔ->category³ö´í£º" + e2.toString());
+                Init.show(this.f53F + "è°ƒè¯•->categoryå‡ºé”™ï¼š" + e2.toString());
             }
             SpiderApi spiderApi4 = this.f55H;
             if (spiderApi4 != null) {
-                StringBuilder m817b = C0374d.m817b("category()´íÎó£¡-->");
+                StringBuilder m817b = C0374d.m817b("category()é”™è¯¯ï¼-->");
                 m817b.append(e2.toString());
                 spiderApi4.log(m817b.toString());
             }
@@ -721,7 +711,7 @@ public class XBPQ extends Spider {
 
     
     private String m1565e0(String str) {
-        return str.indexOf("×ªÒåĞÇºÅ") >= 0 ? str.replace("×ªÒåĞÇºÅ", "*") : str;
+        return str.indexOf("è½¬ä¹‰æ˜Ÿå·") >= 0 ? str.replace("è½¬ä¹‰æ˜Ÿå·", "*") : str;
     }
 
     
@@ -738,16 +728,16 @@ public class XBPQ extends Spider {
                 return matcher.group(1).replaceAll("\\&#?[a-zA-Z0-9]{1,10};", "").replaceAll("<[^>]*>", "").replaceAll("[><]", "").trim();
             }
             if (this.f68l) {
-                Init.show("Ìæ»»Î´»ñÈ¡µ½ÓĞĞ§½ØÈ¡ÄÚÈİ");
+                Init.show("æ›¿æ¢æœªè·å–åˆ°æœ‰æ•ˆæˆªå–å†…å®¹");
             }
             return "";
         } catch (Exception e) {
             if (this.f68l) {
-                Init.show(this.f53F + "µ÷ÊÔ->Ìæ»»½ØÈ¡³ö´í£º" + e.toString());
+                Init.show(this.f53F + "è°ƒè¯•->æ›¿æ¢æˆªå–å‡ºé”™ï¼š" + e.toString());
             }
             SpiderApi spiderApi = this.f55H;
             if (spiderApi != null) {
-                C0595b.m368a(e, C0374d.m817b("Ìæ»»½ØÈ¡xhSubCut()´íÎó£¡-->"), spiderApi);
+                C0595b.m368a(e, C0374d.m817b("æ›¿æ¢æˆªå–xhSubCut()é”™è¯¯ï¼-->"), spiderApi);
             }
             return "";
         }
@@ -757,11 +747,11 @@ public class XBPQ extends Spider {
         try {
             return "proxy:        } catch (Exception e) {
             if (this.f68l) {
-                Init.show(this.f53F + "µ÷ÊÔ->fixCover³ö´í£º" + e.toString());
+                Init.show(this.f53F + "è°ƒè¯•->fixCoverå‡ºé”™ï¼š" + e.toString());
             }
             SpiderApi spiderApi = this.f55H;
             if (spiderApi != null) {
-                C0595b.m368a(e, C0374d.m817b("fixCover()´íÎó-->"), spiderApi);
+                C0595b.m368a(e, C0374d.m817b("fixCover()é”™è¯¯-->"), spiderApi);
             }
             return str;
         }
@@ -805,10 +795,10 @@ public class XBPQ extends Spider {
             str2 = this.f55H.getAddress(true) + "webparse/" + str4 + "<<eval" + (str3.matches(".*Jb?\\d+.*") ? str3.replaceAll(".*Jb?(\\d+).*", "$1") : "") + (this.f74r.indexOf("Jb") >= 0 ? ":document.body.innerHTML" : ":document.documentElement.outerHTML");
             SpiderApi spiderApi = this.f55H;
             if (spiderApi != null) {
-                spiderApi.log("ÕıÔÚÊ¹ÓÃ´úÀí--> " + str2);
+                spiderApi.log("æ­£åœ¨ä½¿ç”¨ä»£ç†--> " + str2);
             }
         }
-        HashMap<String, String> m1550r = !"ËÑË÷".equals(this.f73q) ? m1550r(str4) : m1592I(str4);
+        HashMap<String, String> m1550r = !"æœç´¢".equals(this.f73q) ? m1550r(str4) : m1592I(str4);
         if (trim.length() > 2) {
             LinkedHashMap linkedHashMap = new LinkedHashMap();
             for (String str5 : trim.split("\\&")) {
@@ -827,14 +817,14 @@ public class XBPQ extends Spider {
         }
         try {
             byte[] bytes = abstractC0641a.getResult().body().bytes();
-            return bytes != null ? new String(bytes, this.f74r.indexOf("g") >= 0 ? "GBK" : m1596E("±àÂë", "ÍøÒ³±àÂë¸ñÊ½", "Coding_format", "UTF-8")) : "";
+            return bytes != null ? new String(bytes, this.f74r.indexOf("g") >= 0 ? "GBK" : m1596E("ç¼–ç ", "ç½‘é¡µç¼–ç æ ¼å¼", "Coding_format", "UTF-8")) : "";
         } catch (IOException e) {
             if (this.f68l) {
-                Init.show(this.f53F + "µ÷ÊÔ->deEnCode³ö´í£º" + e.toString());
+                Init.show(this.f53F + "è°ƒè¯•->deEnCodeå‡ºé”™ï¼š" + e.toString());
             }
             SpiderApi spiderApi2 = this.f55H;
             if (spiderApi2 != null) {
-                StringBuilder m817b = C0374d.m817b("deEnCode()´íÎó-->");
+                StringBuilder m817b = C0374d.m817b("deEnCode()é”™è¯¯-->");
                 m817b.append(e.toString());
                 spiderApi2.log(m817b.toString());
             }
@@ -899,12 +889,12 @@ public class XBPQ extends Spider {
         String str5;
         StringBuilder sb3;
         try {
-            if (str2.equals("post") || str2.equals("¿Õ#post#¿Õ")) {
-                str2 = "¿Õ#" + this.f62f + "/index.php/ajax/verify_check?type=show&verify={code};post;#¿Õ";
+            if (str2.equals("post") || str2.equals("ç©º#post#ç©º")) {
+                str2 = "ç©º#" + this.f62f + "/index.php/ajax/verify_check?type=show&verify={code};post;#ç©º";
             }
             String[] split = str2.split("#");
             if (str2.length() < 1) {
-                if ("ËÑË÷".equals(this.f73q)) {
+                if ("æœç´¢".equals(this.f73q)) {
                     sb3 = new StringBuilder();
                     sb3.append(this.f62f);
                     sb3.append("/index.php/ajax/verify_check?type=search&verify=");
@@ -921,7 +911,7 @@ public class XBPQ extends Spider {
                 if (this.f74r.indexOf("y") >= 0) {
                     str = this.f62f + "/index.php/verify/index.html?";
                 }
-                if (!"¿Õ".equals(split[0])) {
+                if (!"ç©º".equals(split[0])) {
                     if (split[0].startsWith("http")) {
                         str = split[0];
                     } else {
@@ -939,9 +929,9 @@ public class XBPQ extends Spider {
                         str = sb2.toString();
                     }
                 }
-                if ("ËÑË÷".equals(this.f73q)) {
+                if ("æœç´¢".equals(this.f73q)) {
                     str3 = this.f62f + "/index.php/ajax/verify_check?type=search&verify=";
-                    if (!"¿Õ".equals(split[2])) {
+                    if (!"ç©º".equals(split[2])) {
                         if (split[2].startsWith("http")) {
                             str3 = split[2];
                         } else {
@@ -961,7 +951,7 @@ public class XBPQ extends Spider {
                     }
                 } else {
                     str3 = this.f62f + "/index.php/ajax/verify_check?type=show&verify=";
-                    if (!"¿Õ".equals(split[1])) {
+                    if (!"ç©º".equals(split[1])) {
                         if (split[1].startsWith("http")) {
                             str3 = split[1];
                         } else {
@@ -988,7 +978,7 @@ public class XBPQ extends Spider {
         } catch (Exception e) {
             SpiderApi spiderApi = this.f55H;
             if (spiderApi != null) {
-                C0595b.m368a(e, C0374d.m817b("getCodeUrl()´íÎó-->"), spiderApi);
+                C0595b.m368a(e, C0374d.m817b("getCodeUrl()é”™è¯¯-->"), spiderApi);
                 return null;
             }
             return null;
@@ -1036,7 +1026,7 @@ public class XBPQ extends Spider {
         } catch (Exception e) {
             SpiderApi spiderApi = this.f55H;
             if (spiderApi != null) {
-                C0595b.m368a(e, C0374d.m817b("getDatas()´íÎó-->"), spiderApi);
+                C0595b.m368a(e, C0374d.m817b("getDatas()é”™è¯¯-->"), spiderApi);
                 return null;
             }
             return null;
@@ -1187,11 +1177,11 @@ public class XBPQ extends Spider {
             return null;
         } catch (JSONException e) {
             if (this.f68l) {
-                Init.show(this.f53F + "µ÷ÊÔ->getJsonArray³ö´í£º" + e.toString());
+                Init.show(this.f53F + "è°ƒè¯•->getJsonArrayå‡ºé”™ï¼š" + e.toString());
             }
             SpiderApi spiderApi = this.f55H;
             if (spiderApi != null) {
-                StringBuilder m817b = C0374d.m817b("getJsonArray()´íÎó£¡-->");
+                StringBuilder m817b = C0374d.m817b("getJsonArray()é”™è¯¯ï¼-->");
                 m817b.append(e.toString());
                 spiderApi.log(m817b.toString());
             }
@@ -1204,9 +1194,9 @@ public class XBPQ extends Spider {
         String sb;
         String m1558j;
         String str3 = "";
-        if (str2.indexOf("Ìæ»»") >= 0) {
-            String replaceAll = str2.replaceAll(".*(\\[½ö?Ìæ»»[:£º][^\\]]+?\\]).*", "$1");
-            str2 = str2.replaceAll("\\[½ö?Ìæ»»[:£º]([^\\]]+?)\\]", "");
+        if (str2.indexOf("æ›¿æ¢") >= 0) {
+            String replaceAll = str2.replaceAll(".*(\\[ä»…?æ›¿æ¢[:ï¼š][^\\]]+?\\]).*", "$1");
+            str2 = str2.replaceAll("\\[ä»…?æ›¿æ¢[:ï¼š]([^\\]]+?)\\]", "");
             str3 = replaceAll;
         }
         if (str2.indexOf("+") < 0) {
@@ -1230,7 +1220,7 @@ public class XBPQ extends Spider {
                     m1558j = m1546v(str, split[i]);
                 }
                 if (m1558j.length() > 0) {
-                    if (m1558j.startsWith("http") && !sb2.toString().trim().endsWith("=") && !sb2.toString().trim().endsWith("½âÎö")) {
+                    if (m1558j.startsWith("http") && !sb2.toString().trim().endsWith("=") && !sb2.toString().trim().endsWith("è§£æ")) {
                         sb2 = new StringBuilder();
                     }
                     sb2.append(m1558j);
@@ -1243,8 +1233,8 @@ public class XBPQ extends Spider {
 
     
     private String m1546v(String str, String str2) {
-        if (str2.endsWith("ÕûÒ³")) {
-            str2 = str2.replace("ÕûÒ³", "");
+        if (str2.endsWith("æ•´é¡µ")) {
+            str2 = str2.replace("æ•´é¡µ", "");
             if (this.f79w.length() > 0) {
                 str = this.f79w;
             }
@@ -1286,11 +1276,11 @@ public class XBPQ extends Spider {
             return sb.toString();
         } catch (JSONException e) {
             if (this.f68l) {
-                Init.show(this.f53F + "µ÷ÊÔ->getJsonArrayStringAction³ö´í£º" + e.toString());
+                Init.show(this.f53F + "è°ƒè¯•->getJsonArrayStringActionå‡ºé”™ï¼š" + e.toString());
             }
             SpiderApi spiderApi = this.f55H;
             if (spiderApi != null) {
-                StringBuilder m817b = C0374d.m817b("getJsonArrayStringAction()´íÎó£¡-->");
+                StringBuilder m817b = C0374d.m817b("getJsonArrayStringAction()é”™è¯¯ï¼-->");
                 m817b.append(e.toString());
                 spiderApi.log(m817b.toString());
             }
@@ -1337,11 +1327,11 @@ public class XBPQ extends Spider {
             return "";
         } catch (JSONException e) {
             if (this.f68l) {
-                Init.show(this.f53F + "µ÷ÊÔ->getJsonString³ö´í£º" + e.toString());
+                Init.show(this.f53F + "è°ƒè¯•->getJsonStringå‡ºé”™ï¼š" + e.toString());
             }
             SpiderApi spiderApi = this.f55H;
             if (spiderApi != null) {
-                StringBuilder m817b = C0374d.m817b("getJsonString()´íÎó£¡-->");
+                StringBuilder m817b = C0374d.m817b("getJsonString()é”™è¯¯ï¼-->");
                 m817b.append(e.toString());
                 spiderApi.log(m817b.toString());
             }
@@ -1417,14 +1407,14 @@ public class XBPQ extends Spider {
             JSONObject m1555m = m1555m(str6, str4);
             final String string = m1555m.getString("str");
             str4 = m1555m.getString("codeUrl");
-            if (str3.indexOf("ÊäÈëÑéÖ¤Âë") >= 0) {
-                C0620k.f1166i = "ÇëÊäÈëÑéÖ¤Âë";
+            if (str3.indexOf("è¾“å…¥éªŒè¯ç ") >= 0) {
+                C0620k.f1166i = "è¯·è¾“å…¥éªŒè¯ç ";
             } else {
-                if (str3.indexOf("»¬¶¯ÑéÖ¤") < 0 && str3.indexOf("ÈË»úÑéÖ¤") < 0) {
-                    C0620k.f1166i = "ÍøÒ³ä¯ÀÀ";
+                if (str3.indexOf("æ»‘åŠ¨éªŒè¯") < 0 && str3.indexOf("äººæœºéªŒè¯") < 0) {
+                    C0620k.f1166i = "ç½‘é¡µæµè§ˆ";
                     string = str6;
                 }
-                C0620k.f1166i = "ÈË»úÑéÖ¤";
+                C0620k.f1166i = "äººæœºéªŒè¯";
             }
             final String str7 = this.f81y;
             Init.run(new Runnable() {                 @Override                 public final void run() {
@@ -1433,7 +1423,7 @@ public class XBPQ extends Spider {
                     final String str9 = str7;
                     String str10 = XBPQ.f46J;
                     xbpq.getClass();
-                    C0620k.m365A("±¾Õ¾ĞèÒªÑéÖ¤", str8, str9, new InterfaceC0619j() {                         @Override                         public void vertifyCode(String str11) {
+                    C0620k.m365A("æœ¬ç«™éœ€è¦éªŒè¯", str8, str9, new InterfaceC0619j() {                         @Override                         public void vertifyCode(String str11) {
                             String[] split;
                             if (str11.indexOf("$$$") <= 1) {
                                 XBPQ.this.f82z = "0";
@@ -1471,21 +1461,21 @@ public class XBPQ extends Spider {
                     Thread.sleep(500L);
                 } catch (Exception e) {
                     if (this.f68l) {
-                        Init.show(this.f53F + "µ÷ÊÔ->webViewDialogË¯Ãß´í£º" + e.toString());
+                        Init.show(this.f53F + "è°ƒè¯•->webViewDialogç¡çœ é”™ï¼š" + e.toString());
                     }
                     SpiderApi spiderApi = this.f55H;
                     if (spiderApi != null) {
-                        spiderApi.log("webViewDialogË¯Ãß´íÎó-->" + e.toString());
+                        spiderApi.log("webViewDialogç¡çœ é”™è¯¯-->" + e.toString());
                     }
                 }
             }
         } catch (Exception e2) {
             if (this.f68l) {
-                Init.show(this.f53F + "µ÷ÊÔ->ÑéÖ¤³ö´í£º" + e2.toString());
+                Init.show(this.f53F + "è°ƒè¯•->éªŒè¯å‡ºé”™ï¼š" + e2.toString());
             }
             SpiderApi spiderApi2 = this.f55H;
             if (spiderApi2 != null) {
-                C0595b.m368a(e2, C0374d.m817b("ÑéÖ¤´íÎó-->"), spiderApi2);
+                C0595b.m368a(e2, C0374d.m817b("éªŒè¯é”™è¯¯-->"), spiderApi2);
             }
         }
         if ("1".equals(this.f82z)) {
@@ -1499,7 +1489,7 @@ public class XBPQ extends Spider {
                 m817b.append(this.f82z);
                 sb = m817b.toString();
             }
-            if ("ËÑË÷".equals(this.f73q)) {
+            if ("æœç´¢".equals(this.f73q)) {
                 m1592I = m1592I(str6);
             } else if (this.f74r.indexOf("c") >= 0) {
                 m1592I = m1550r(str6);
@@ -1525,23 +1515,23 @@ public class XBPQ extends Spider {
                     C0647g.m310e(C0647g.m313b(), sb.split(";")[0], null, m1592I, abstractC0642b);
                     String result = abstractC0642b.getResult();
                     if (this.f68l) {
-                        Init.show(result != null ? result : "ÑéÖ¤Ê§°Ü");
+                        Init.show(result != null ? result : "éªŒè¯å¤±è´¥");
                     }
                     SpiderApi spiderApi3 = this.f55H;
                     if (spiderApi3 != null) {
-                        if (("ÑéÖ¤½á¹û--> " + result) == null) {
-                            result = "ÑéÖ¤Ê§°Ü";
+                        if (("éªŒè¯ç»“æœ--> " + result) == null) {
+                            result = "éªŒè¯å¤±è´¥";
                         }
                         spiderApi3.log(result);
                     }
                 }
             } catch (Exception e3) {
                 if (this.f68l) {
-                    Init.show(this.f53F + "µ÷ÊÔ->webViewDialogÑéÖ¤ºópost´í£º" + e3.toString());
+                    Init.show(this.f53F + "è°ƒè¯•->webViewDialogéªŒè¯åposté”™ï¼š" + e3.toString());
                 }
                 SpiderApi spiderApi4 = this.f55H;
                 if (spiderApi4 != null) {
-                    C0595b.m368a(e3, C0374d.m817b("webViewDialogÑéÖ¤ºópost´íÎó-->"), spiderApi4);
+                    C0595b.m368a(e3, C0374d.m817b("webViewDialogéªŒè¯åposté”™è¯¯-->"), spiderApi4);
                 }
             }
             if (!"0".equals(this.f82z)) {
@@ -1566,7 +1556,7 @@ public class XBPQ extends Spider {
         } catch (Exception e) {
             SpiderApi spiderApi = this.f55H;
             if (spiderApi != null) {
-                C0595b.m368a(e, C0374d.m817b("decrypt()´íÎó-->"), spiderApi);
+                C0595b.m368a(e, C0374d.m817b("decrypt()é”™è¯¯-->"), spiderApi);
                 return null;
             }
             return null;
@@ -1587,7 +1577,7 @@ public class XBPQ extends Spider {
         } catch (Exception e) {
             SpiderApi spiderApi = this.f55H;
             if (spiderApi != null) {
-                C0595b.m368a(e, C0374d.m817b("encrypt()´íÎó-->"), spiderApi);
+                C0595b.m368a(e, C0374d.m817b("encrypt()é”™è¯¯-->"), spiderApi);
                 return null;
             }
             return null;
@@ -1600,8 +1590,8 @@ public class XBPQ extends Spider {
             return str;
         }
         String str3 = this.f58b;
-        String m1596E = m1596E("ÌØÊâ·ÖÀà", "ÌØÊâ·ÖÀàurl", "ÌØÊâ·ÖÀàÁ´½Ó", "");
-        String m1595F = m1595F("ÆğÊ¼Ò³", "·ÖÀàÆğÊ¼Ò³Âë", "qishiye", "firstpage", "1");
+        String m1596E = m1596E("ç‰¹æ®Šåˆ†ç±»", "ç‰¹æ®Šåˆ†ç±»url", "ç‰¹æ®Šåˆ†ç±»é“¾æ¥", "");
+        String m1595F = m1595F("èµ·å§‹é¡µ", "åˆ†ç±»èµ·å§‹é¡µç ", "qishiye", "firstpage", "1");
         if (this.f73q.length() > 0 && m1596E.indexOf("$") >= 0 && m1596E.indexOf(this.f73q) >= 0) {
             String m1037a = C0338n.m1037a(m1596E, "#");
             StringBuilder m817b = C0374d.m817b(".*");
@@ -1647,30 +1637,6 @@ public class XBPQ extends Spider {
         return encrypt(str, str2, str3, str4);
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     public java.lang.String homeContent(boolean r29) {
         
         throw new UnsupportedOperationException("Method not decompiled: com.github.catvod.spider.XBPQ.homeContent(boolean):java.lang.String");
@@ -1681,18 +1647,18 @@ public class XBPQ extends Spider {
         String str2;
         String replaceAll;
         try {
-            String m1595F = m1595F("Ê×Ò³", "ÈÈÃÅ", "homeContent", "shouye", "40");
-            m1595F = (m1595F.equals("1") || m1595F.equals("Ê×Ò³")) ? "40" : "40";
-            if (m1597D("ÁĞ±í·ÖÀà", "fenlei", "").length() < 3) {
+            String m1595F = m1595F("é¦–é¡µ", "çƒ­é—¨", "homeContent", "shouye", "40");
+            m1595F = (m1595F.equals("1") || m1595F.equals("é¦–é¡µ")) ? "40" : "40";
+            if (m1597D("åˆ—è¡¨åˆ†ç±»", "fenlei", "").length() < 3) {
                 str = this.f59c + "#";
             } else {
-                str = m1597D("ÁĞ±í·ÖÀà", "fenlei", "") + "#";
+                str = m1597D("åˆ—è¡¨åˆ†ç±»", "fenlei", "") + "#";
             }
             this.f61e = 40;
             if (m1595F.indexOf("$") >= 0) {
                 this.f61e = Integer.parseInt(m1595F.split("\\$")[1]);
                 String str3 = m1595F.split("\\$")[0];
-                if (str3.equals("Ê×Ò³")) {
+                if (str3.equals("é¦–é¡µ")) {
                     replaceAll = "";
                 } else {
                     str2 = ".*" + str3 + "\\$(.*?)#.*";
@@ -1707,7 +1673,7 @@ public class XBPQ extends Spider {
             }
             if (this.f61e > 0) {
                 this.f60d = true;
-                this.f73q = "Ê×Ò³";
+                this.f73q = "é¦–é¡µ";
                 JSONObject m1566e = m1566e(replaceAll, "1", false, new HashMap<>());
                 this.f73q = "";
                 this.f60d = false;
@@ -1715,11 +1681,11 @@ public class XBPQ extends Spider {
             }
         } catch (Exception e) {
             if (this.f68l) {
-                Init.show(this.f53F + "µ÷ÊÔ->»ñÈ¡Ê×Ò³×ÊÔ´³ö´í£º" + e.toString());
+                Init.show(this.f53F + "è°ƒè¯•->è·å–é¦–é¡µèµ„æºå‡ºé”™ï¼š" + e.toString());
             }
             SpiderApi spiderApi = this.f55H;
             if (spiderApi != null) {
-                C0595b.m368a(e, C0374d.m817b("»ñÈ¡Ê×Ò³×ÊÔ´´íÎó£¡-->"), spiderApi);
+                C0595b.m368a(e, C0374d.m817b("è·å–é¦–é¡µèµ„æºé”™è¯¯ï¼-->"), spiderApi);
             }
         }
         return "";
@@ -1755,29 +1721,29 @@ public class XBPQ extends Spider {
                     } else {
                         JSONObject jSONObject = new JSONObject();
                         this.f48A = jSONObject;
-                        jSONObject.put("·ÖÀàurl", str);
+                        jSONObject.put("åˆ†ç±»url", str);
                     }
                 } else if (str.startsWith("{")) {
                     this.f48A = new JSONObject(str);
                 } else {
                     this.f48A = new JSONObject();
-                    String replace = str.replace("\\,", "¶ººÅ");
+                    String replace = str.replace("\\,", "é€—å·");
                     if (replace.indexOf(",") < 0) {
-                        this.f48A.put(replace.substring(0, replace.indexOf(":")), replace.substring(replace.indexOf(":") + 1).replace("¶ººÅ", ","));
+                        this.f48A.put(replace.substring(0, replace.indexOf(":")), replace.substring(replace.indexOf(":") + 1).replace("é€—å·", ","));
                     } else {
                         for (String str2 : replace.split(",")) {
-                            this.f48A.put(str2.substring(0, str2.indexOf(":")), str2.substring(str2.indexOf(":") + 1).replace("¶ººÅ", ","));
+                            this.f48A.put(str2.substring(0, str2.indexOf(":")), str2.substring(str2.indexOf(":") + 1).replace("é€—å·", ","));
                         }
                     }
                 }
                 m1588M();
             } catch (JSONException e) {
                 if (this.f68l) {
-                    Init.show("Çë¼ìÅä ext");
+                    Init.show("è¯·æ£€é… ext");
                 }
                 SpiderApi spiderApi = this.f55H;
                 if (spiderApi != null) {
-                    StringBuilder m817b = C0374d.m817b("Çë¼ìÅä ext-->");
+                    StringBuilder m817b = C0374d.m817b("è¯·æ£€é… ext-->");
                     m817b.append(e.toString());
                     spiderApi.log(m817b.toString());
                 }
@@ -1791,7 +1757,7 @@ public class XBPQ extends Spider {
         String port = spiderApi.getPort();
         this.f56I = port;
         Init.f38e = port;
-        StringBuilder m817b = C0374d.m817b("Id°æ¶Ë¿Ú£º");
+        StringBuilder m817b = C0374d.m817b("Idç‰ˆç«¯å£ï¼š");
         m817b.append(this.f56I);
         spiderApi.log(m817b.toString());
     }
@@ -1799,8 +1765,8 @@ public class XBPQ extends Spider {
     public boolean isVideoFormat(String str) {
         String lowerCase = str.toLowerCase();
         if (lowerCase.startsWith("http") || lowerCase.startsWith("magnet")) {
-            String[] split = m1597D("ĞáÌ½´Ê", "VideoFormat", "m3u8#.mp4#.flv#.mp3#.m4a#magnet:#ed2k:#ftp:#thunder:#push:#tvbox-xg:").split("#");
-            String[] split2 = m1597D("¹ıÂË´Ê", "VideoFilter", "url=http#;post;#.js").split("#");
+            String[] split = m1597D("å—…æ¢è¯", "VideoFormat", "m3u8#.mp4#.flv#.mp3#.m4a#magnet:#ed2k:#ftp:#thunder:#push:#tvbox-xg:").split("#");
+            String[] split2 = m1597D("è¿‡æ»¤è¯", "VideoFilter", "url=http#;post;#.js").split("#");
             for (String str2 : split) {
                 if (lowerCase.indexOf(str2) >= 0) {
                     for (String str3 : split2) {
@@ -1830,13 +1796,13 @@ public class XBPQ extends Spider {
             m1590K = m1590K.replaceAll("xp(http.*)", "$1");
         }
         String str3 = this.f74r;
-        String m1596E = str3.indexOf("g") >= 0 ? "GBK" : m1596E("±àÂë", "ÍøÒ³±àÂë¸ñÊ½", "Coding_format", "UTF-8");
+        String m1596E = str3.indexOf("g") >= 0 ? "GBK" : m1596E("ç¼–ç ", "ç½‘é¡µç¼–ç æ ¼å¼", "Coding_format", "UTF-8");
         if ("UTF-8".equals(m1596E)) {
             str2 = "";
         } else {
             SpiderApi spiderApi = this.f55H;
             if (spiderApi != null) {
-                spiderApi.log("±àÂë--> " + m1596E);
+                spiderApi.log("ç¼–ç --> " + m1596E);
             }
             str2 = m1560h(m1590K);
         }
@@ -1844,13 +1810,13 @@ public class XBPQ extends Spider {
         boolean z = true;
         if (str2.length() < 1) {
             if (this.f74r.indexOf("J") < 0 || m1590K.indexOf("outerHTML") >= 0 || m1590K.indexOf("innerHTML") >= 0 || this.f55H == null) {
-                m434h = C0582b.m434h(m1590K, !"ËÑË÷".equals(this.f73q) ? m1550r(m1590K) : m1592I(m1590K), hashMap);
+                m434h = C0582b.m434h(m1590K, !"æœç´¢".equals(this.f73q) ? m1550r(m1590K) : m1592I(m1590K), hashMap);
             } else {
                 String str4 = this.f74r.indexOf("Jb") >= 0 ? ":document.body.innerHTML" : ":document.documentElement.outerHTML";
                 String str5 = this.f55H.getAddress(true) + "webparse/" + m1590K + "<<eval" + (str3.matches(".*Jb?\\d+.*") ? str3.replaceAll(".*Jb?(\\d+).*", "$1") : "") + str4;
                 SpiderApi spiderApi2 = this.f55H;
                 if (spiderApi2 != null) {
-                    spiderApi2.log("ÕıÔÚÊ¹ÓÃ´úÀíget--> " + str5);
+                    spiderApi2.log("æ­£åœ¨ä½¿ç”¨ä»£ç†get--> " + str5);
                 }
                 m434h = this.f55H.webParse(str5, "");
             }
@@ -1861,23 +1827,23 @@ public class XBPQ extends Spider {
         }
         m1581T(hashMap);
         String m1579V = m1579V(m1585P(m1590K, str2));
-        if ("0".equals(this.f82z) || ((this.f74r.indexOf("y") < 0 && this.f74r.indexOf("Y") < 0 && m1599B("ÑéÖ¤").length() <= 0) || (m1579V.indexOf("°²È«ÑéÖ¤") < 0 && m1579V.indexOf("ÊäÈëÑéÖ¤Âë") < 0 && m1579V.indexOf("»¬¶¯ÑéÖ¤") < 0 && m1579V.indexOf("ÈË»úÑéÖ¤") < 0))) {
+        if ("0".equals(this.f82z) || ((this.f74r.indexOf("y") < 0 && this.f74r.indexOf("Y") < 0 && m1599B("éªŒè¯").length() <= 0) || (m1579V.indexOf("å®‰å…¨éªŒè¯") < 0 && m1579V.indexOf("è¾“å…¥éªŒè¯ç ") < 0 && m1579V.indexOf("æ»‘åŠ¨éªŒè¯") < 0 && m1579V.indexOf("äººæœºéªŒè¯") < 0))) {
             z = false;
         }
         if (z) {
             SpiderApi spiderApi3 = this.f55H;
             String m1037a2 = C0338n.m1037a(m1590K, m1037a);
             if (spiderApi3 != null) {
-                spiderApi3.log("µ¯´°ÑéÖ¤£¬Ô´ÂëÎª--> " + m1579V);
+                spiderApi3.log("å¼¹çª—éªŒè¯ï¼Œæºç ä¸º--> " + m1579V);
                 m1037a2 = C0338n.m1037a(m1037a2, m1037a);
             }
-            m1579V = m1567d0("fetch", m1037a2, m1579V, m1599B("ÑéÖ¤"));
-            if (m1579V.indexOf("°²È«ÑéÖ¤") < 0 || m1579V.indexOf("ÊäÈëÑéÖ¤Âë") < 0 || m1579V.indexOf("»¬¶¯ÑéÖ¤") < 0 || m1579V.indexOf("ÈË»úÑéÖ¤") < 0) {
-                Init.show("ÑéÖ¤³É¹¦£¡");
+            m1579V = m1567d0("fetch", m1037a2, m1579V, m1599B("éªŒè¯"));
+            if (m1579V.indexOf("å®‰å…¨éªŒè¯") < 0 || m1579V.indexOf("è¾“å…¥éªŒè¯ç ") < 0 || m1579V.indexOf("æ»‘åŠ¨éªŒè¯") < 0 || m1579V.indexOf("äººæœºéªŒè¯") < 0) {
+                Init.show("éªŒè¯æˆåŠŸï¼");
                 this.f82z = "0";
             }
         }
-        String trim = m1579V != null ? startsWith ? m1579V : m1579V.replace(" ", "¿Õ¿Õ¿Õ").replaceAll("\\s+", "").replace("¿Õ¿Õ¿Õ", " ").trim() : "";
+        String trim = m1579V != null ? startsWith ? m1579V : m1579V.replace(" ", "ç©ºç©ºç©º").replaceAll("\\s+", "").replace("ç©ºç©ºç©º", " ").trim() : "";
         this.f79w = trim;
         return trim;
     }
@@ -1895,13 +1861,13 @@ public class XBPQ extends Spider {
         if (startsWith) {
             m1590K = m1590K.replaceAll("xp(http.*)", "$1");
         }
-        String m1596E = this.f74r.indexOf("g") >= 0 ? "GBK" : m1596E("±àÂë", "ÍøÒ³±àÂë¸ñÊ½", "Coding_format", "UTF-8");
+        String m1596E = this.f74r.indexOf("g") >= 0 ? "GBK" : m1596E("ç¼–ç ", "ç½‘é¡µç¼–ç æ ¼å¼", "Coding_format", "UTF-8");
         if ("UTF-8".equals(m1596E)) {
             str2 = "";
         } else {
             SpiderApi spiderApi = this.f55H;
             if (spiderApi != null) {
-                spiderApi.log("±àÂë--> " + m1596E);
+                spiderApi.log("ç¼–ç --> " + m1596E);
             }
             str2 = m1560h(m1590K);
         }
@@ -1917,14 +1883,14 @@ public class XBPQ extends Spider {
                 str3 = this.f55H.getAddress(true) + "webparse/" + str4 + "<<eval" + (str5.matches(".*Jb?\\d+.*") ? str5.replaceAll(".*Jb?(\\d+).*", "$1") : "") + str6;
                 SpiderApi spiderApi2 = this.f55H;
                 if (spiderApi2 != null) {
-                    spiderApi2.log("ÕıÔÚpost´úÀí--> " + str3);
+                    spiderApi2.log("æ­£åœ¨postä»£ç†--> " + str3);
                 }
                 SpiderApi spiderApi3 = this.f55H;
                 if (spiderApi3 != null) {
                     spiderApi3.log("postBody--> " + trim);
                 }
             }
-            HashMap<String, String> m1550r = !"ËÑË÷".equals(this.f73q) ? m1550r(str4) : m1592I(str4);
+            HashMap<String, String> m1550r = !"æœç´¢".equals(this.f73q) ? m1550r(str4) : m1592I(str4);
             AbstractC0642b abstractC0642b = new AbstractC0642b() {                 
                 @Override                 public final void onFailure(Call call, Exception exc) {
                 }
@@ -1934,7 +1900,7 @@ public class XBPQ extends Spider {
             };
             SpiderApi spiderApi4 = this.f55H;
             if (spiderApi4 != null) {
-                spiderApi4.log("·¢³öpostÇëÇó...");
+                spiderApi4.log("å‘å‡ºpostè¯·æ±‚...");
             }
             if (trim.isEmpty()) {
                 m313b = C0647g.m313b();
@@ -1944,11 +1910,11 @@ public class XBPQ extends Spider {
                     C0647g.m309f(C0647g.m313b(), str3, new JSONObject(trim).toString(), m1550r, abstractC0642b);
                 } catch (JSONException e) {
                     if (this.f68l) {
-                        Init.show(this.f53F + "µ÷ÊÔ->fetchPost³ö´í£º" + e.toString());
+                        Init.show(this.f53F + "è°ƒè¯•->fetchPostå‡ºé”™ï¼š" + e.toString());
                     }
                     SpiderApi spiderApi5 = this.f55H;
                     if (spiderApi5 != null) {
-                        StringBuilder m817b = C0374d.m817b("fetchPost()´íÎó-->");
+                        StringBuilder m817b = C0374d.m817b("fetchPost()é”™è¯¯-->");
                         m817b.append(e.toString());
                         spiderApi5.log(m817b.toString());
                     }
@@ -1982,23 +1948,23 @@ public class XBPQ extends Spider {
             str2 = "";
         }
         String m1579V = m1579V(m1585P(m1590K, str2));
-        if (!"0".equals(this.f82z) && ((this.f74r.indexOf("y") >= 0 || this.f74r.indexOf("Y") >= 0 || m1599B("ÑéÖ¤").length() > 0) && (m1579V.indexOf("°²È«ÑéÖ¤") >= 0 || m1579V.indexOf("ÊäÈëÑéÖ¤Âë") >= 0 || m1579V.indexOf("»¬¶¯ÑéÖ¤") >= 0 || m1579V.indexOf("ÈË»úÑéÖ¤") >= 0))) {
+        if (!"0".equals(this.f82z) && ((this.f74r.indexOf("y") >= 0 || this.f74r.indexOf("Y") >= 0 || m1599B("éªŒè¯").length() > 0) && (m1579V.indexOf("å®‰å…¨éªŒè¯") >= 0 || m1579V.indexOf("è¾“å…¥éªŒè¯ç ") >= 0 || m1579V.indexOf("æ»‘åŠ¨éªŒè¯") >= 0 || m1579V.indexOf("äººæœºéªŒè¯") >= 0))) {
             z = true;
         }
         if (z) {
             SpiderApi spiderApi6 = this.f55H;
             String m1037a2 = C0338n.m1037a(m1590K, m1037a);
             if (spiderApi6 != null) {
-                spiderApi6.log("ĞèÒªÑéÖ¤£¬Ô´ÂëÎª--> " + m1579V);
+                spiderApi6.log("éœ€è¦éªŒè¯ï¼Œæºç ä¸º--> " + m1579V);
                 m1037a2 = C0338n.m1037a(m1037a2, m1037a);
             }
-            m1579V = m1567d0("fetchPost", m1037a2, m1579V, m1599B("ÑéÖ¤"));
-            if (m1579V.indexOf("°²È«ÑéÖ¤") < 0 || m1579V.indexOf("ÊäÈëÑéÖ¤Âë") < 0 || m1579V.indexOf("»¬¶¯ÑéÖ¤") < 0 || m1579V.indexOf("ÈË»úÑéÖ¤") < 0) {
-                Init.show("ÑéÖ¤³É¹¦£¡");
+            m1579V = m1567d0("fetchPost", m1037a2, m1579V, m1599B("éªŒè¯"));
+            if (m1579V.indexOf("å®‰å…¨éªŒè¯") < 0 || m1579V.indexOf("è¾“å…¥éªŒè¯ç ") < 0 || m1579V.indexOf("æ»‘åŠ¨éªŒè¯") < 0 || m1579V.indexOf("äººæœºéªŒè¯") < 0) {
+                Init.show("éªŒè¯æˆåŠŸï¼");
                 this.f82z = "0";
             }
         }
-        String trim2 = m1579V != null ? startsWith ? m1579V : m1579V.replace(" ", "¿Õ¿Õ¿Õ").replaceAll("\\s+", "").replace("¿Õ¿Õ¿Õ", " ").trim() : "";
+        String trim2 = m1579V != null ? startsWith ? m1579V : m1579V.replace(" ", "ç©ºç©ºç©º").replaceAll("\\s+", "").replace("ç©ºç©ºç©º", " ").trim() : "";
         this.f79w = trim2;
         return trim2;
     }
@@ -2008,7 +1974,7 @@ public class XBPQ extends Spider {
     }
 
     public boolean manualVideoCheck() {
-        return !m1597D("ĞáÌ½´Ê", "¹ıÂË´Ê", "").isEmpty() || m1598C("ÊÖ¶¯ĞáÌ½", "ManualSniffer").equals("1") || this.f74r.indexOf("x") >= 0;
+        return !m1597D("å—…æ¢è¯", "è¿‡æ»¤è¯", "").isEmpty() || m1598C("æ‰‹åŠ¨å—…æ¢", "ManualSniffer").equals("1") || this.f74r.indexOf("x") >= 0;
     }
 
     
@@ -2071,9 +2037,9 @@ public class XBPQ extends Spider {
             if (spiderApi != null) {
                 spiderApi.log("searchContent(key=" + str + ", quick=" + z + ")");
             }
-            this.f73q = "ËÑË÷";
+            this.f73q = "æœç´¢";
             JSONObject m1578W = m1578W("", str, z);
-            String replace = m1596E("ÌØÊâ·ÖÀà", "ÌØÊâ·ÖÀàurl", "ÌØÊâ·ÖÀàÁ´½Ó", "").replace(this.f62f, "");
+            String replace = m1596E("ç‰¹æ®Šåˆ†ç±»", "ç‰¹æ®Šåˆ†ç±»url", "ç‰¹æ®Šåˆ†ç±»é“¾æ¥", "").replace(this.f62f, "");
             if (m1578W == null || m1578W.getJSONArray("list") == null || m1578W.getJSONArray("list").length() <= 0 || replace.indexOf("#http") >= 0) {
                 JSONArray jSONArray = m1578W != null ? m1578W.getJSONArray("list") : new JSONArray();
                 for (String str2 : replace.split("#h")) {
@@ -2096,7 +2062,7 @@ public class XBPQ extends Spider {
                 if (jSONArray.length() > 0) {
                     return new JSONObject().put("list", jSONArray).toString();
                 }
-                JSONObject m1578W3 = m1578W(this.f62f + "/;;ËÑÊ×Ò³", str, z);
+                JSONObject m1578W3 = m1578W(this.f62f + "/;;æœé¦–é¡µ", str, z);
                 if (m1578W3 == null || m1578W3.getJSONArray("list") == null || m1578W3.getJSONArray("list").length() <= 0) {
                     String[] split2 = this.f59c.split("#");
                     int length = split2.length;
@@ -2106,7 +2072,7 @@ public class XBPQ extends Spider {
                             break;
                         }
                         String str3 = split2[i2];
-                        JSONObject m1578W4 = m1578W(m1564f(str3.split("\\$")[1], "1", false, null) + ";;ËÑÊ×Ò³", str, z);
+                        JSONObject m1578W4 = m1578W(m1564f(str3.split("\\$")[1], "1", false, null) + ";;æœé¦–é¡µ", str, z);
                         JSONArray jSONArray3 = m1578W4 != null ? m1578W4.getJSONArray("list") : new JSONArray();
                         if (jSONArray3.length() > 0) {
                             for (int i3 = 0; i3 < jSONArray3.length(); i3++) {
@@ -2127,11 +2093,11 @@ public class XBPQ extends Spider {
             return m1578W.toString();
         } catch (Exception e) {
             if (this.f68l) {
-                Init.show(this.f53F + "µ÷ÊÔ->searchContent³ö´í£º" + e.toString());
+                Init.show(this.f53F + "è°ƒè¯•->searchContentå‡ºé”™ï¼š" + e.toString());
             }
             SpiderApi spiderApi2 = this.f55H;
             if (spiderApi2 != null) {
-                C0595b.m368a(e, C0374d.m817b("searchContent()´íÎó-->"), spiderApi2);
+                C0595b.m368a(e, C0374d.m817b("searchContent()é”™è¯¯-->"), spiderApi2);
             }
             return "";
         }
