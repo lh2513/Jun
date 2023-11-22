@@ -212,7 +212,7 @@ public class YGP extends Spider{
             String vod_play_url = "";
             for(int i = 0;i<fromName.size();i++){
                 List<String> playUrl = new ArrayList<>();
-                playName.add(fromName.get(i).select("h3.list-title").text());
+                playName.add(fromName.get(i).select("h2.list-title").text());
                 Elements fromPlay = fromName.get(i).select("td a.tlist-title");
                 for(int j = 0;j<fromPlay.size();j++){
                     playUrl.add(fromPlay.get(j).text() + "$" + fromPlay.get(j).attr("href"));
