@@ -232,8 +232,6 @@ public class XBPQ extends Spider {
         String user = getRuleVal("请求头", "头部集合", "ua", "UserAgent", "").trim(), ua ="";
         if (user.contains("手机") || user.contains("MOBILE_UA") || oComand.contains("a") || user.isEmpty() || user.contains("电脑") || user.contains("PC_UA")) {
             if (user.contains("手机") || user.contains("MOBILE_UA") || oComand.contains("a")) {
-                ua = Misc.MoAgent;
-            } else {
                 ua = Misc.UaWinChrome;
             }
             headers.put("User-Agent", ua);
