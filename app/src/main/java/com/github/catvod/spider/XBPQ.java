@@ -113,12 +113,12 @@ public class XBPQ extends Spider {
     private PushAgent pushAgent;
 
     @Override
-    public void init(Context context)throws Exception {
+    public void init(Context context){
         super.init(context);
     }
 
     @Override
-    public void init(Context context, String extend)throws Exception {
+    public void init(Context context, String extend){
         super.init(context, extend);
             if (extend != null) {
                 try {
@@ -170,7 +170,7 @@ public class XBPQ extends Spider {
     }
 
     @Override
-    public String homeContent(boolean filter) throws Exception {
+    public String homeContent(boolean filter) {
         try {
             JSONObject result = new JSONObject();
             JSONArray classes = new JSONArray();
@@ -302,7 +302,7 @@ public class XBPQ extends Spider {
     }
 
     @Override
-    public String homeVideoContent() throws Exception {
+    public String homeVideoContent() {
         try {
             String homeCate = "";
             String temp = getRuleVal("首页", "热门", "homeContent", "shouye", "40");
@@ -810,14 +810,14 @@ public class XBPQ extends Spider {
     }
 
     @Override
-    public String categoryContent(String tid, String pg, boolean filter, HashMap<String, String> extend) throws Exception {
+    public String categoryContent(String tid, String pg, boolean filter, HashMap<String, String> extend) {
         JSONObject obj = category(tid, pg, filter, extend);
         return obj != null ? obj.toString() : "";
     }
 
 
     @Override
-    public String detailContent(List<String> ids) throws Exception {
+    public String detailContent(List<String> ids) {
         try {
             String[] idInfo = ids.get(0).split("\\$\\$\\$");
             if (idInfo.length==1) {
@@ -1555,7 +1555,7 @@ public class XBPQ extends Spider {
     }
 
     @Override
-    public String playerContent(String flag, String id, List<String> vipFlags) throws Exception {
+    public String playerContent(String flag, String id, List<String> vipFlags) {
         try {
             if (id.contains("https://www.aliyundrive.com/s/")) return pushAgent.playerContent(flag, id, vipFlags);
             JSONObject result = new JSONObject();
@@ -1646,7 +1646,7 @@ public class XBPQ extends Spider {
     }
 
     @Override
-    public String searchContent(String key, boolean quick) throws Exception {
+    public String searchContent(String key, boolean quick) {
         try {
             String sousuoqian = getRuleVal("搜索url", "搜索前", "sousuoqian", "search_url", "searchUrl", "");
             String webUrlTmp = "";
@@ -2729,12 +2729,12 @@ public class XBPQ extends Spider {
 
     //修复软件不支持的格式无法嗅探的问题
     @Override 
-    public boolean manualVideoCheck() throws Exception {
+    public boolean manualVideoCheck() {
         return !getRuleVal("嗅探词", "过滤词", "").isEmpty() || getRuleVal("手动嗅探", "ManualSniffer").equals("1") || oComand.contains("s"); 
     } 
      
     @Override 
-    public boolean isVideoFormat(String url) throws Exception {
+    public boolean isVideoFormat(String url) {
         url = url.toLowerCase();
         String[] videoFormatList = getRuleVal("嗅探词", getRuleVal("VideoFormat",".m3u8#.mp4#.flv#.mp3#.m4a")).split("#");
         String[] videoSniffList = getRuleVal("过滤词", getRuleVal("VideoFilter", "=http#.jpg#.png#.ico#.gif#.js")).split("#");
