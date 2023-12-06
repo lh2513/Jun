@@ -44,11 +44,14 @@ public class FreeOK extends Spider {
 
             rebopaihang.put("type_id", "/label/new.html");
             rebopaihang.put("type_name", "热播排行");
-            dianying.put("type_id", "/vod-show/1-----------.html");
+            dianying.put("type_id", "/vod-show/1--------");
             dianying.put("type_name", "电影");
 
             dianshiju.put("type_id", "/vod-show/2--------");
             dianshiju.put("type_name", "电视剧");
+            
+            guochanju.put("type_id", "/vod-show/6--------");
+            guochanju.put("type_name", "国产剧");
 
             dongman.put("type_id", "/vod-show/3--------");
             dongman.put("type_name", "动漫");
@@ -59,6 +62,7 @@ public class FreeOK extends Spider {
             classes.put(rebopaihang);
             classes.put(dianying);
             classes.put(dianshiju);
+            classes.put(guochanju);
             classes.put(dongman);
             classes.put(zongyi);
 
