@@ -17,7 +17,7 @@ import java.util.List;
 
 public class LIBVIO extends Spider {
 
-    private static final String siteUrl = "https://tv.libvio.cc";
+    private static final String siteUrl = "https://www.libvio.pro";
 
     // 请求头部设置
     protected HashMap<String, String> getHeaders() {
