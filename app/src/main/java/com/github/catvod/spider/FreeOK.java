@@ -39,6 +39,7 @@ public class FreeOK extends Spider {
             JSONObject rebopaihang = new JSONObject();
             JSONObject dianying = new JSONObject();
             JSONObject dianshiju = new JSONObject();
+            JSONObject guochanju = new JSONObject();
             JSONObject dongman = new JSONObject();
             JSONObject zongyi = new JSONObject();
 
