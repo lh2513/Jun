@@ -44,16 +44,16 @@ public class FreeOK extends Spider {
 
             rebopaihang.put("type_id", "/label/new.html");
             rebopaihang.put("type_name", "热播排行");
-            dianying.put("type_id", "/vodshow/1--------");
+            dianying.put("type_id", "/vod-show/1-----------.html");
             dianying.put("type_name", "电影");
 
-            dianshiju.put("type_id", "/vodshow/2--------");
+            dianshiju.put("type_id", "/vod-show/2--------");
             dianshiju.put("type_name", "电视剧");
 
-            dongman.put("type_id", "/vodshow/3--------");
+            dongman.put("type_id", "/vod-show/3--------");
             dongman.put("type_name", "动漫");
 
-            zongyi.put("type_id", "/vodshow/4--------");
+            zongyi.put("type_id", "/vod-show/4--------");
             zongyi.put("type_name", "综艺");
 
             classes.put(rebopaihang);
@@ -155,7 +155,7 @@ public class FreeOK extends Spider {
             String vod_play_from = "";
             for (int i = 0; i < sources.size(); i++) {
                 int b = i + 1;
-                vod_play_from = vod_play_from + "源" + b + "$$$";
+                vod_play_from = vod_play_from + "线路" + b + "$$$";
 
                 for (int j = 0; j < sources.get(i).select("a").size(); j++) {
                     if (j < sources.get(i).select("a").size() - 1) {
@@ -194,7 +194,7 @@ public class FreeOK extends Spider {
     public String searchContent(String key, boolean quick) {
         try {
 
-            String search_url = "https://www.freeok.vip/vodsearch/-------------.html?wd=" + key;
+            String search_url = "https://www.freeok.vip/vod-so/wd-------------.html" + key;
             String content = OkHttpUtil.string(search_url, getHeaders());
             Elements list_el = Jsoup.parse(content).select("[class=module-card-item module-item]");
             JSONObject result = new JSONObject();
