@@ -17,13 +17,13 @@ import com.github.catvod.crawler.Spider;
 import com.github.catvod.crawler.SpiderDebug;
 
 public class Kunyu77 extends Spider {
-    private static final String siteUrl = "https://api.kunyu77.com";
+    private static final String siteUrl = "https://api.tyun77.cn";
 
     protected HashMap<String, String> getHeaders() {
         HashMap<String, String> headers = new HashMap<>();
         headers.put("User-Agent", "okhttp/3.12.0");
-        headers.put("Referer", "http://api.kunyu77.com");
-        headers.put("Host", "api.kunyu77.com");
+        headers.put("Referer", "http://api.tyun77.cn");
+        headers.put("Host", "api.tyun77.cn");
         return headers;
     }
 
@@ -69,7 +69,7 @@ public class Kunyu77 extends Spider {
 
     public String categoryContent(String tid, String pg, boolean filter, HashMap<String, String> extend) {
         try {
-            String url = "http://api.kunyu77.com/api.php/provide/searchFilter?type_id=" + tid
+            String url = "http://api.tyun77.cn/api.php/provide/searchFilter?type_id=" + tid
                     + "&pagesize=24&pagenum=1&year=&category=&area=";
         } catch (Exception e) {
             SpiderDebug.log(e);
@@ -83,9 +83,9 @@ public class Kunyu77 extends Spider {
             JSONObject info = new JSONObject();
             JSONArray list = new JSONArray();
             JSONObject result = new JSONObject();
-            String url = "http://api.kunyu77.com/api.php/provide/videoDetail?devid=453CA5D864457C7DB4D0EAA93DE96E66&package=com.sevenVideo.app.android&version=1.8.7&ids="
+            String url = "http://api.tyun77.cn/api.php/provide/videoDetail?devid=453CA5D864457C7DB4D0EAA93DE96E66&package=com.sevenVideo.app.android&version=1.8.7&ids="
                     + ids.get(0);
-            String playurls = "http://api.kunyu77.com/api.php/provide/videoPlaylist?devid=453CA5D864457C7DB4D0EAA93DE96E66&package=com.sevenVideo.app.android&version=1.8.7&ids="
+            String playurls = "http://api.tyun77.cn/api.php/provide/videoPlaylist?devid=453CA5D864457C7DB4D0EAA93DE96E66&package=com.sevenVideo.app.android&version=1.8.7&ids="
                     + ids.get(0);
             String videoInfo = OkHttpUtil.string(url, getHeaders());
             String videolist = OkHttpUtil.string(playurls, getHeaders());
@@ -182,7 +182,7 @@ public class Kunyu77 extends Spider {
             String t = String.valueOf(System.currentTimeMillis() / 1000);
             StringBuilder stringBuilder = new StringBuilder();
 
-            stringBuilder.append("http://api.kunyu77.com/api.php/provide/searchVideo");
+            stringBuilder.append("http://api.tyun77.cn/api.php/provide/searchVideo");
             stringBuilder.append(
                     "?pcode=010110002&version=2.0.4&devid=4ac3fe96a6133de96904b8d3c8cfe16d&package=com.sevenVideo.app.android&sys=android&sysver=7.1.2&brand=realme&model=RMX1931&sj=");
             stringBuilder.append(t);
