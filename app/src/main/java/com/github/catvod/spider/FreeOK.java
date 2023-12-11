@@ -154,8 +154,8 @@ public class FreeOK extends Spider {
             String content = OkHttpUtil.string(durl, getHeaders());
             Elements sources = Jsoup.parse(content).select("[class=module-tab-items-box hisSwiper]")
                     .select("[class=module-tab-item tab-item]");
-            String vod_play_url = TextUtils.join("$$$", play_from_array);
-            String vod_play_from = TextUtils.join("$$$", playMap.keySet());
+            String vod_play_url = "";
+            String vod_play_from = "";
             for (int i = 0; i < sources.size(); i++) {
                 int b = i + 1;
                 vod_play_from = vod_play_from + "源" + b + "$$$";
