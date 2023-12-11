@@ -146,7 +146,7 @@ public class Xinsj extends Spider {
             String vod_name = v_info_el.select("[class=page-title]").text();
             String vod_pic = Jsoup.parse(content).select("[class=lazyload]").get(0).attr("data-src");
             String type_name = v_info_el.select("[class=tag-link]").text();
-            String vod_actor =  v_info_el.select(".video-info-itemtitle.导演：").text();
+            String vod_actor =  Jsoup.parse(content).select("[class=slash]").get(0).attr("_blank");
             String vod_director = v_info_el.select("[导演：]").text();
             String vod_content = v_info_el.select("[class=video-info-item video-info-content vod_content]").text();
 
