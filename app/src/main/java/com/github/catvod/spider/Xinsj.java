@@ -187,11 +187,10 @@ public class Xinsj extends Spider {
             // System.out.println(content);
             Element v_info_el = Jsoup.parse(content).select("[id=bfurl]").get(0);
             String play_url = v_info_el.attr("href");
-            String finalPlayUrl = "https://jx3.北京隐形车衣.中国/player/ec.php?code=ak&if=1&url=" + play_url;
             JSONObject result = new JSONObject();
             result.put("parse", 0);
             result.put("header", "");
-            result.put("playUrl", finalPlayUrl);
+            result.put("playUrl", playUrl);
             result.put("url", "");
             return result.toString();
 
