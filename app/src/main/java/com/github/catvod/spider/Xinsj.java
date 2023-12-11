@@ -116,7 +116,7 @@ public class Xinsj extends Spider {
                     .select("[class=module-tab-item tab-item]");
             ArrayList<String> playFroms = new ArrayList<String>();
             Elements sourcesUrl_el = Jsoup.parse(content).select("[class=sort-item]");
-            System.out.println(sourcesUrl_el);
+            //System.out.println(sourcesUrl_el);
 
             ArrayList<String> play_from_array = new ArrayList<String>();
             for (int i = 0; i < sourcesUrl_el.size(); i++) {
@@ -146,7 +146,7 @@ public class Xinsj extends Spider {
             String vod_name = v_info_el.select("[class=page-title]").text();
             String vod_pic = Jsoup.parse(content).select("[class=lazyload]").get(0).attr("data-src");
             String type_name = v_info_el.select("[class=tag-link]").text();
-            String vod_actor =  v_info_el.select("[主演：]").text();
+            String vod_actor =  v_info_el.select(".video-info-itemtitle.导演：").text();
             String vod_director = v_info_el.select("[导演：]").text();
             String vod_content = v_info_el.select("[class=video-info-item video-info-content vod_content]").text();
 
