@@ -149,8 +149,8 @@ public class Xinsj extends Spider {
             String vod_year = "年份";
             String vod_area = "地区";
             String vod_remarks = "提示信息";
-            String vod_actor =  v_info_el.select(".[class=video-info-itemtitle]").text();
-            String vod_director = v_info_el.select("[class=video-info-itemtitle]").text();
+            String vod_actor =  v_info_el.select("[主演：]").text();
+            String vod_director = v_info_el.select("[导演：]").text();
             String vod_content = v_info_el.select("[class=video-info-item video-info-content vod_content]").text();
 
             info.put("vod_id", ids.get(0));
