@@ -116,7 +116,7 @@ public class Xinsj extends Spider {
                     .select("[class=module-tab-item tab-item]");
             ArrayList<String> playFroms = new ArrayList<String>();
             Elements sourcesUrl_el = Jsoup.parse(content).select("[class=sort-item]");
-            // System.out.println(sourcesUrl_el);
+            System.out.println(sourcesUrl_el);
 
             ArrayList<String> play_from_array = new ArrayList<String>();
             for (int i = 0; i < sourcesUrl_el.size(); i++) {
