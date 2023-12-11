@@ -112,7 +112,7 @@ public class Xinsj extends Spider {
 
             String content = OkHttpUtil.string(url, getHeaders(url));
 
-            Elements sourcesName_el = Jsoup.parse(content).select("[class=module-tab-content]")
+            Elements sourcesName_el = Jsoup.parse(content).select("[class=module-tab-value]")
                     .select("[class=module-tab-item tab-item]");
             ArrayList<String> playFroms = new ArrayList<String>();
             Elements sourcesUrl_el = Jsoup.parse(content).select("[class=sort-item]");
@@ -146,20 +146,14 @@ public class Xinsj extends Spider {
             String vod_name = v_info_el.select("[class=page-title]").text();
             String vod_pic = Jsoup.parse(content).select("[class=lazyload]").get(0).attr("data-src");
             String type_name = v_info_el.select("[class=tag-link]").text();
-            String vod_year =  v_info_el.select("[class=tag-link]").text();
-            String vod_area =  v_info_el.select("[class=tag-link]").text();
-            String vod_remarks = "提示信息";
-            String vod_actor = v_info_el.select("[主演：]").text();
-            String vod_director = v_info_el.select("[导演：]").text();
+            String vod_actor = v_info_el.select("[class=video-info-item video-info-actor]").text();
+            String vod_director = v_info_el.select("[class=video-info-items]").text();
             String vod_content = v_info_el.select("[class=video-info-item video-info-content vod_content]").text();
 
             info.put("vod_id", ids.get(0));
             info.put("vod_name", vod_name);
             info.put("vod_pic", vod_pic);
             info.put("type_name", type_name);
-            info.put("vod_year", vod_year);
-            info.put("vod_area", vod_area);
-            info.put("vod_remarks", vod_remarks);
             info.put("vod_actor", vod_actor);
             info.put("vod_director", vod_director);
             info.put("vod_content", vod_content);
