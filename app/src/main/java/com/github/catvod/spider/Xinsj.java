@@ -21,7 +21,7 @@ import com.github.catvod.crawler.SpiderDebug;
 
 public class Xinsj extends Spider {
 
-    private static final String siteUrl = "https://www.6080dy3.com";
+    private static final String siteUrl = "https://www.80yy3.com";
 
     public void init(Context context) {
         super.init(context);
@@ -146,12 +146,12 @@ public class Xinsj extends Spider {
             String vod_name = v_info_el.select("[class=page-title]").text();
             String vod_pic = Jsoup.parse(content).select("[class=lazyload]").get(0).attr("data-src");
             String type_name = v_info_el.select("[class=tag-link]").text();
-            String vod_year = "年份";
-            String vod_area = "地区";
+            String vod_year =  v_info_el.select("[class=tag-link]").text();
+            String vod_area =  v_info_el.select("[class=tag-link]").text();
             String vod_remarks = "提示信息";
-            String vod_actor = "主演";
-            String vod_director = "导演";
-            String vod_content = "简介";
+            String vod_actor = v_info_el.select("[主演：]").text();
+            String vod_director = v_info_el.select("[导演：]").text();
+            String vod_content = v_info_el.select("[class=video-info-item video-info-content vod_content]").text();
 
             info.put("vod_id", ids.get(0));
             info.put("vod_name", vod_name);
