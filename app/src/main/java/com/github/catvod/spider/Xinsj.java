@@ -112,7 +112,7 @@ public class Xinsj extends Spider {
 
             String content = OkHttpUtil.string(url, getHeaders(url));
 
-            Elements sourcesName_el = Jsoup.parse(content).select("[class=module-tab-value]")
+            Elements sourcesName_el = Jsoup.parse(content).select("[class=module-tab-content]")
                     .select("[class=module-tab-item tab-item]");
             ArrayList<String> playFroms = new ArrayList<String>();
             Elements sourcesUrl_el = Jsoup.parse(content).select("[class=sort-item]");
