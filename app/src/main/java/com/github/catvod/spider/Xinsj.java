@@ -191,7 +191,7 @@ public class Xinsj extends Spider {
             JSONObject result = new JSONObject();
             result.put("parse", 0);
             result.put("header", "");
-            result.put("playUrl", play_url);
+            result.put("playUrl", finalPlayUrl);
             result.put("url", "");
             return result.toString();
 
