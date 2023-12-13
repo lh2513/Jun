@@ -181,7 +181,7 @@ public class Xinsj extends Spider {
     }
 
     public String playerContent(String flag, String id, List<String> vipFlags) {
-    try {
+        try {
             String url = siteUrl + id;
             String content = OkHttpUtil.string(url, getHeaders(url));
             // System.out.println(content);
@@ -198,7 +198,7 @@ public class Xinsj extends Spider {
             SpiderDebug.log(e);
         }
         return "";
-}
+    }
 
     public static HashMap<String, String> Myq(String str, String str2, String str3, String str4) {
         HashMap<String, String> hashMap = new HashMap<String, String>();
