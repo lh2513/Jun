@@ -155,7 +155,8 @@ public class FreeOK extends Spider {
             String vod_play_from = "";
             for (int i = 0; i < sources.size(); i++) {
                 int b = i + 1;
-                vod_play_from = vod_play_from + "源" + b + "$$$";
+                String line_name = sources.get(i).select(".tab-item-title").text();
+                vod_play_from += line_name + "$$$";
 
                 for (int j = 0; j < sources.get(i).select("a").size(); j++) {
                     if (j < sources.get(i).select("a").size() - 1) {
