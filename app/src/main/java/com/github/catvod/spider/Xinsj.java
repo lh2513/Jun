@@ -182,26 +182,22 @@ public class Xinsj extends Spider {
 
     public String playerContent(String flag, String id, List<String> vipFlags) {
     try {
-        String url = siteUrl + id;
-        String content = OkHttpUtil.string(url, getHeaders(url));
-        // 解析原始播放地址
-        // ...
+            String url = siteUrl + id;
+            String content = OkHttpUtil.string(url, getHeaders(url));
+            // System.out.println(content);
+            Element v_info_el = Jsoup.parse(content).select("[id=bfurl]").get(0);
+            String play_url = v_info_el.attr("href");
+            JSONObject result = new JSONObject();
+            result.put("parse", 0);
+            result.put("header", "");
+            result.put("playUrl", playUrl);
+            result.put("url", "");
+            return result.toString();
 
-        // 将播放地址拼接为新的格式
-        String modifiedPlayUrl = "https://jx1.xn--1lq90i13mxk5bolhm8k.xn--fiqs8s//80//jx.php?data=" + originalPlayUrl;
-
-        // 构造返回结果
-        JSONObject result = new JSONObject();
-        result.put("parse", 0);
-        result.put("header", "");
-        result.put("playUrl", modifiedPlayUrl);
-        result.put("url", "");
-        return result.toString();
-
-    } catch (Exception e) {
-        SpiderDebug.log(e);
-    }
-    return "";
+        } catch (Exception e) {
+            SpiderDebug.log(e);
+        }
+        return "";
 }
 
     public static HashMap<String, String> Myq(String str, String str2, String str3, String str4) {
