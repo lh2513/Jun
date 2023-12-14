@@ -1,7 +1,5 @@
 package com.github.catvod.spider;
 
-import android.content.Context;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
@@ -17,10 +15,6 @@ import com.github.catvod.crawler.Spider;
 import com.github.catvod.crawler.SpiderDebug;
 
 public class FreeOK extends Spider {
-    @Override
-    public void init(Context context) {
-        super.init(context);
-    }
 
     private static final String siteUrl = "https://www.freeok.vip";
 
@@ -42,18 +36,18 @@ public class FreeOK extends Spider {
             JSONObject dongman = new JSONObject();
             JSONObject zongyi = new JSONObject();
 
-            rebopaihang.put("type_id", "/label/new.html");
+            rebopaihang.put("type_id", "/label/hot.html");
             rebopaihang.put("type_name", "热播排行");
-            dianying.put("type_id", "/vodshow/1--------");
+            dianying.put("type_id", "/vod-show/1--------");
             dianying.put("type_name", "电影");
 
-            dianshiju.put("type_id", "/vodshow/2--------");
+            dianshiju.put("type_id", "/vod-show/2--------");
             dianshiju.put("type_name", "电视剧");
 
-            dongman.put("type_id", "/vodshow/3--------");
+            dongman.put("type_id", "/vod-show/3--------");
             dongman.put("type_name", "动漫");
 
-            zongyi.put("type_id", "/vodshow/4--------");
+            zongyi.put("type_id", "/vod-show/4--------");
             zongyi.put("type_name", "综艺");
 
             classes.put(rebopaihang);
@@ -73,7 +67,7 @@ public class FreeOK extends Spider {
     public String categoryContent(String tid, String pg, boolean filter, HashMap<String, String> extend) {
         try {
 
-            if (tid.equals("/label/new.html")) {
+            if (tid.equals("/label/hot.html")) {
                 JSONObject result = new JSONObject();
                 JSONArray jSONArray = new JSONArray();
 
@@ -155,8 +149,7 @@ public class FreeOK extends Spider {
             String vod_play_from = "";
             for (int i = 0; i < sources.size(); i++) {
                 int b = i + 1;
-                String line_name = sources.get(i).select(".tab-item-title").text();
-                vod_play_from += line_name + "$$$";
+                vod_play_from = vod_play_from + "源" + b + "$$$";
 
                 for (int j = 0; j < sources.get(i).select("a").size(); j++) {
                     if (j < sources.get(i).select("a").size() - 1) {
