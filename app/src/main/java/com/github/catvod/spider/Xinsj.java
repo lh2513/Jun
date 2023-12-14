@@ -271,7 +271,7 @@ public class Xinsj extends Spider {
             // 取基本数据
             String cover = doc.selectFirst("div.module-item-pic > img").attr("data-src");
             String title = doc.selectFirst("div.video-info-header > h1.page-title").text();
-            String desc = doc.select("div.video-info-content span").text();
+            String desc = doc.select("div.video-info-aux scroll-content span").text();
             String category = "", area = "", year = "", remark = "", director = "", actor = "";
             Elements span_text_muted = doc.select("div.video-info-main span.video-info-itemtitle");
             for (int i = 0; i < span_text_muted.size(); i++) {
@@ -331,7 +331,7 @@ public class Xinsj extends Spider {
             });
             // 取播放列表数据
             Elements sources = doc.select("div.module-tab-content div span");
-            Elements sourceList = doc.select("div.module-player-list");
+            Elements sourceList = doc.select("div.module-blocklist");
 
             for (int i = 0; i < sources.size(); i++) {
                 Element source = sources.get(i);
