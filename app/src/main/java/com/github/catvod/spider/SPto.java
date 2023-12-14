@@ -3,7 +3,7 @@ package com.github.catvod.spider;
 import android.content.Context;
 import android.text.TextUtils;
 import com.github.catvod.crawler.Spider;
-import com.github.catvod.net.OkHttp;
+import com.github.catvod.utils.okhttp.OkHttpUtil;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
