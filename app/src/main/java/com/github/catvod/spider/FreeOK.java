@@ -149,17 +149,16 @@ public class FreeOK extends Spider {
             String vod_play_from = "";
             for (int i = 0; i < sources.size(); i++) {
                 int b = i + 1;
-                vod_play_from = vod_play_from + "源" + b + "$$$";
-
+                String playLineName = sources.get(i).select(".sort-tab-title").text();
+                vod_play_from = vod_play_from + playLineName + "$$$";
+                
                 for (int j = 0; j < sources.get(i).select("a").size(); j++) {
                     if (j < sources.get(i).select("a").size() - 1) {
-
                         vod_play_url = vod_play_url + sources.get(i).select("a").get(j).select("span").text() + "$"
-                                + siteUrl + sources.get(i).select("a").get(j).attr("href") + "#";
+                            + siteUrl + sources.get(i).select("a").get(j).attr("href") + "#";
                     } else {
                         vod_play_url = vod_play_url + sources.get(i).select("a").get(j).select("span").text() + "$"
-                                + siteUrl + sources.get(i).select("a").get(j).attr("href") + "$$$";
-
+                            + siteUrl + sources.get(i).select("a").get(j).attr("href") + "$$$";
                     }
                 }
             }
