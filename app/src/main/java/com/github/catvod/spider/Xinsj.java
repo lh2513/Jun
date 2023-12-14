@@ -270,7 +270,7 @@ public class Xinsj extends Spider {
             JSONObject vodList = new JSONObject();
             // 取基本数据
             String cover = doc.selectFirst("div.module-item-pic > img").attr("data-src");
-            String title = doc.select("[class=page-title]").text();
+            String title = doc.selectFirst("video-info-header > h1").text();
             String desc = doc.select("div.video-info-content span").text();
             String category = "", area = "", year = "", remark = "", director = "", actor = "";
             Elements span_text_muted = doc.select("div.video-info-main span.video-info-itemtitle");
