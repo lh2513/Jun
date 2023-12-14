@@ -4,7 +4,7 @@ import android.content.Context;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import com.github.catvod.crawler.Spider;
-import com.github.catvod.okhttp.SSLSocketFactoryCompat;
+import com.github.catvod.utils.SSLSocketFactoryCompat;
 import okhttp3.Response;
 import org.json.JSONArray;
 import org.json.JSONObject;
