@@ -219,7 +219,7 @@ public class FirstAid extends Spider {
                 .build();
         OkHttpClient okHttpClient = new OkHttpClient()
                 .newBuilder()
-                .sslSocketFactory(new SSLSocketFactoryCompat(), SSLSocketFactoryCompat.trustAllCert) // 取消证书认证
+                //.sslSocketFactory(new SSLSocketFactoryCompat(), SSLSocketFactoryCompat.trustAllCert) // 取消证书认证
                 .build();
         Response response = okHttpClient.newCall(request).execute();
         String content = response.body().string();
