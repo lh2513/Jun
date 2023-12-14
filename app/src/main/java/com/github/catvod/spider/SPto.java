@@ -40,7 +40,7 @@ public class SPto extends Spider {
      * @param extend  配置文件的 ext 参数
      */
     @Override
-    public void init(Context context, String extend) throws Exception {
+    public void init(Context context, String extend) {
         super.init(context, extend);
         // 域名经常性发生变化，通过外部配置文件传入，可以方便修改
         if (extend.endsWith("/")) {
@@ -57,7 +57,7 @@ public class SPto extends Spider {
      * @return 返回字符串
      */
     @Override
-    public String homeContent(boolean filter) throws Exception {
+    public String homeContent(boolean filter) {
         JSONArray classes = new JSONArray();
         List<String> typeIds = Arrays.asList("1", "2", "4", "3");
         List<String> typeNames = Arrays.asList("电影", "剧集", "动漫", "综艺");
@@ -116,7 +116,7 @@ public class SPto extends Spider {
      * @return 返回字符串
      */
     @Override
-    public String categoryContent(String tid, String pg, boolean filter, HashMap<String, String> extend) throws Exception {
+    public String categoryContent(String tid, String pg, boolean filter, HashMap<String, String> extend) {
         // 筛选处理 start
         HashMap<String, String> ext = new HashMap<>();
         if (extend != null && extend.size() > 0) {
@@ -161,7 +161,7 @@ public class SPto extends Spider {
      * @return 返回字符串
      */
     @Override
-    public String detailContent(List<String> ids) throws Exception {
+    public String detailContent(List<String> ids) {
         String vid = ids.get(0);
         String detailURL = siteURL + vid;
         String html = OkHttp.string(detailURL, getHeader());
@@ -262,7 +262,7 @@ public class SPto extends Spider {
      * @return 返回值
      */
     @Override
-    public String searchContent(String key, boolean quick) throws Exception {
+    public String searchContent(String key, boolean quick) {
         String searchURL = siteURL + "/index.php/ajax/suggest?mid=1&wd=" + URLEncoder.encode(key) + "&limit=20";
         String html = OkHttp.string(searchURL, getHeader());
         JSONArray list = new JSONObject(html).getJSONArray("list");
@@ -285,7 +285,7 @@ public class SPto extends Spider {
     }
 
     @Override
-    public String playerContent(String flag, String id, List<String> vipFlags) throws Exception {
+    public String playerContent(String flag, String id, List<String> vipFlags) {
         String playPageURL = siteURL + id;
         Map<String, String> header = getHeader();
         String html = OkHttp.string(playPageURL, header);
