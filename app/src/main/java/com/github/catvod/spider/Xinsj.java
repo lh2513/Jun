@@ -331,7 +331,7 @@ public class Xinsj extends Spider {
             });
             // 取播放列表数据
             Elements sources = doc.select("div.module-tab-content div span");
-            Elements sourceList = doc.select("div.scroll-content");
+            Elements sourceList = doc.select("div.module-tab-item tab-item");
 
             for (int i = 0; i < sources.size(); i++) {
                 Element source = sources.get(i);
