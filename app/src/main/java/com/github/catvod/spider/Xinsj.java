@@ -32,7 +32,7 @@ import java.util.regex.Pattern;
 import okhttp3.Call;
 import okhttp3.Headers;
 
-public class Dy6080 extends Spider {
+public class Xinsj extends Spider {
     private static final String siteUrl = "https://www.80yy3.com";
     private static final String siteHost = "www.80yy3.com";
 
