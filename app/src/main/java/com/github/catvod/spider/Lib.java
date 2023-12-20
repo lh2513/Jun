@@ -27,8 +27,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Lib extends Spider {
-    private static final String siteUrl = "https://www.libvio.me/";
-    private static final String siteHost = "www.libvio.me";
+    private static final String siteUrl = "https://www.libvio.pro/";
+    private static final String siteHost = "www.libvio.pro";
 
     /**
      * 播放源配置
@@ -396,12 +396,12 @@ public class Lib extends Spider {
         try {
             //定义播放用的headers
             JSONObject headers = new JSONObject();
-            headers.put("origin", " https://www.libvio.me/");
+            headers.put("origin", " https://www.libvio.pro/");
             headers.put("User-Agent", " Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36");
             headers.put("Accept", " */*");
             headers.put("Accept-Language", " zh-CN,zh;q=0.9,en-US;q=0.3,en;q=0.7");
             headers.put("Accept-Encoding", " gzip, deflate");
-            headers.put("referer", " https://www.libvio.me/");
+            headers.put("referer", " https://www.libvio.pro/");
             // 播放页 url
             String url = siteUrl + "/play/" + id + ".html";
             Document doc = Jsoup.parse(OkHttpUtil.string(url, getHeaders(url)));
@@ -440,7 +440,7 @@ public class Lib extends Spider {
                             result.put("parse", 1);
                             result.put("playUrl", "");
                             result.put("url", url);
-                            //   result.put("header", "{\"Referer\", \"https://www.libvio.me/\"}");
+                            //   result.put("header", "{\"Referer\", \"https://www.libvio.pro/\"}");
                             return result.toString();
                         }
                         break;
