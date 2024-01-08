@@ -36,14 +36,11 @@ public class FreeOK extends Spider {
             JSONObject result = new JSONObject();
             JSONArray classes = new JSONArray();
 
-            JSONObject rebopaihang = new JSONObject();
             JSONObject dianying = new JSONObject();
             JSONObject dianshiju = new JSONObject();
             JSONObject dongman = new JSONObject();
             JSONObject zongyi = new JSONObject();
 
-            rebopaihang.put("type_id", "/label/hot.html");
-            rebopaihang.put("type_name", "热播排行");
             dianying.put("type_id", "/vod-show/1--------");
             dianying.put("type_name", "电影");
 
@@ -56,7 +53,6 @@ public class FreeOK extends Spider {
             zongyi.put("type_id", "/vod-show/4--------");
             zongyi.put("type_name", "综艺");
 
-            classes.put(rebopaihang);
             classes.put(dianying);
             classes.put(dianshiju);
             classes.put(dongman);
@@ -73,7 +69,7 @@ public class FreeOK extends Spider {
     public String categoryContent(String tid, String pg, boolean filter, HashMap<String, String> extend) {
         try {
 
-            if (tid.equals("/label/new.html")) {
+            if (tid.equals("/label/hot.html")) {
                 JSONObject result = new JSONObject();
                 JSONArray jSONArray = new JSONArray();
 
@@ -90,7 +86,7 @@ public class FreeOK extends Spider {
                     String vod_name = list_el.get(i).select("img").attr("alt");
                     String vod_id = siteUrl + list_el.get(i).attr("href");
                     int b = i + 1;
-                    String vod_remarks = "第" + b + "名";
+                    String vod_remarks = item.select(".module-item-note").text();
                     vod.put("vod_id", vod_id);
                     vod.put("vod_name", vod_name);
                     vod.put("vod_pic", vod_pic);
@@ -155,7 +151,7 @@ public class FreeOK extends Spider {
             String vod_play_from = "";
             for (int i = 0; i < sources.size(); i++) {
                 int b = i + 1;
-                vod_play_from = vod_play_from + "源" + b + "$$$";
+                vod_play_from = vod_play_from + "线路" + b + "$$$";
 
                 for (int j = 0; j < sources.get(i).select("a").size(); j++) {
                     if (j < sources.get(i).select("a").size() - 1) {
@@ -169,6 +165,7 @@ public class FreeOK extends Spider {
                     }
                 }
             }
+            
             String title = Jsoup.parse(content).select(".module-info-heading").get(0).getElementsByTag("h1").text();
             String pic = Jsoup.parse(content)
                     .select(".module-main>.module-info-poster>.module-item-cover>.module-item-pic>[class=ls-is-cached lazy lazyload]")
