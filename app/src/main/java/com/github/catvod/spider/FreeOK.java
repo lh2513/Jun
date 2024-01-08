@@ -42,18 +42,18 @@ public class FreeOK extends Spider {
             JSONObject dongman = new JSONObject();
             JSONObject zongyi = new JSONObject();
 
-            rebopaihang.put("type_id", "/label/new.html");
+            rebopaihang.put("type_id", "/label/hot.html");
             rebopaihang.put("type_name", "热播排行");
-            dianying.put("type_id", "/vodshow/1--------");
+            dianying.put("type_id", "/vod-show/1--------");
             dianying.put("type_name", "电影");
 
-            dianshiju.put("type_id", "/vodshow/2--------");
+            dianshiju.put("type_id", "/vod-show/2--------");
             dianshiju.put("type_name", "电视剧");
 
-            dongman.put("type_id", "/vodshow/3--------");
+            dongman.put("type_id", "/vod-show/3--------");
             dongman.put("type_name", "动漫");
 
-            zongyi.put("type_id", "/vodshow/4--------");
+            zongyi.put("type_id", "/vod-show/4--------");
             zongyi.put("type_name", "综艺");
 
             classes.put(rebopaihang);
